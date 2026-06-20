@@ -1,0 +1,22 @@
+CARPETA DE IMÁGENES — Antumalen Pets
+=====================================
+
+Sube aquí los archivos visuales del sitio.
+
+/logo
+  - logo.png  ó  logo.svg   (idealmente fondo transparente)
+  - Si hay versión clara y oscura: logo-claro.png / logo-oscuro.png
+  - Un favicon o ícono cuadrado si existe.
+
+/productos
+  - Una foto por producto.
+  - Nombre sugerido: en minúsculas, sin espacios ni tildes.
+      ej:  alimento-perro-proplan-15kg.jpg
+           arena-gato-5kg.jpg
+           juguete-mordedor.jpg
+  - Recortadas/centradas en el producto, fondo limpio si se puede.
+
+RECOMENDACIONES GENERALES
+  - Formato: JPG (fotos) o PNG/SVG (logo y gráficos).
+  - Tamaño web: máximo ~1600px de ancho; comprimir para que pesen poco.
+  - Evitar tildes, ñ y espacios en los nombres de archivo.

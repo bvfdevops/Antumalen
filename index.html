@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antümalen — Tienda de mascotas y Restaurante | San Clemente</title>
+<meta name="description" content="Antümalen en San Clemente, Maule: tienda de mascotas (alimentos y accesorios) y restaurante de comida casera. Pide por WhatsApp con despacho a domicilio.">
+<meta name="theme-color" content="#A7D8FF">
+<link rel="icon" href="imagenes/logo/Antumalen_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-mode="tienda">
+
+<!-- Decoración (solo tienda) -->
+<div class="bg-deco only-tienda" aria-hidden="true"></div>
+<div class="floaties only-tienda" aria-hidden="true">
+  <span class="floatie f1"><svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="5.5" cy="12" rx="1.9" ry="2.5"/><ellipse cx="9.8" cy="8" rx="1.9" ry="2.5"/><ellipse cx="14.2" cy="8" rx="1.9" ry="2.5"/><ellipse cx="18.5" cy="12" rx="1.9" ry="2.5"/><path d="M12 12.5c2.8 0 5 2.2 5 4.6 0 1.9-1.8 2.9-5 2.9s-5-1-5-2.9c0-2.4 2.2-4.6 5-4.6z"/></svg></span>
+  <span class="floatie f3"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5 6 5c2 0 3.2 1.2 4 2.3C10.8 6.2 12 5 14 5c3.5 0 5 4 3.5 7C19 16.5 12 21 12 21z"/></svg></span>
+  <span class="floatie f5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M5 6c3 3 3 9 0 12M19 6c-3 3-3 9 0 12"/></svg></span>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <div class="wrap nav">
+    <a class="brand" href="#inicio">
+      <img src="imagenes/logo/Antumalen_logo_nobg.png" alt="Antümalen Pets" class="brand-logo only-tienda">
+      <img src="imagenes/logo/Antumalen_restaurante_logo_nobg.png" alt="Antümalen Restaurante" class="brand-logo brand-logo-resto only-resto">
+      <span class="brand-name only-tienda">Antümalen <em>Pets</em></span>
+    </a>
+
+    <nav class="nav-links only-tienda" aria-label="Navegación tienda">
+      <a href="#categorias">Categorías</a>
+      <a href="#productos">Productos</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <nav class="nav-links only-resto" aria-label="Navegación restaurante">
+      <a href="#menu">Menú</a>
+      <a href="#info">Información</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="nav-actions">
+      <!-- Switch de modo (solo iconos) -->
+      <div class="mode-switch" role="tablist" aria-label="Cambiar entre tienda y restaurante">
+        <button class="ms-btn" data-set-mode="tienda" role="tab" aria-label="Tienda de mascotas" title="Tienda de mascotas">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><ellipse cx="5.5" cy="12" rx="1.7" ry="2.2"/><ellipse cx="9.6" cy="8.5" rx="1.7" ry="2.2"/><ellipse cx="14.4" cy="8.5" rx="1.7" ry="2.2"/><ellipse cx="18.5" cy="12" rx="1.7" ry="2.2"/><path d="M12 12.5c2.6 0 4.6 2 4.6 4.2 0 1.8-1.6 2.7-4.6 2.7s-4.6-.9-4.6-2.7c0-2.2 2-4.2 4.6-4.2z"/></svg>
+        </button>
+        <button class="ms-btn" data-set-mode="restaurante" role="tab" aria-label="Restaurante" title="Restaurante">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v8a2 2 0 002 2M6 3v4M9 3v4M9 3v8M18 3c-1.4 0-2.3 2-2.3 4.7 0 1.8 1 2.8 2.3 2.8"/><path d="M8 13v8M18 10.5V21"/></svg>
+        </button>
+      </div>
+      <button class="cart-btn" id="cartBtn" aria-label="Abrir carrito">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================ -->
+<!-- ====================  MODO TIENDA  ========================= -->
+<!-- ============================================================ -->
+
+<!-- HERO TIENDA -->
+<section class="hero hero-tienda only-tienda" id="inicio">
+  <div class="wrap hero-inner reveal">
+    <div class="hero-badge"><span class="dot"></span> Tienda de mascotas en San Clemente</div>
+    <h1>Todo lo que tu mascota <em>necesita</em> en un solo lugar</h1>
+    <p class="lead">Alimentos, accesorios y mucho cariño para perros, gatos, aves, peces y roedores. Compra fácil y te lo llevamos hasta tu puerta.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#productos">Comprar ahora</a>
+      <a class="btn btn-ghost" href="#categorias">Ver productos</a>
+    </div>
+    <div class="hero-trust">
+      <span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.7 6.8 19.2l1-5.8L3.5 9.2l5.9-.9z"/></svg> +2.000 familias felices</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="6" width="13" height="11" rx="1.5"/><path d="M14 9h4l3 3v5h-7z"/><circle cx="6" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg> Despacho a domicilio</span>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORÍAS -->
+<section id="categorias" class="only-tienda">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Categorías</p>
+      <h2>Para cada <em>tipo de mascota</em></h2>
+      <p>Explora nuestros productos según tu compañero favorito.</p>
+    </div>
+    <div class="cat-grid" id="catGrid"></div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos" class="soft-band only-tienda">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Productos</p>
+      <h2>Nuestros <em>destacados</em></h2>
+      <p>Elige tus productos, agrégalos al carrito y envía tu pedido por WhatsApp.</p>
+    </div>
+    <div class="filters" id="filters" role="tablist" aria-label="Categorías de productos"></div>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section id="beneficios" class="only-tienda">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Por qué elegirnos</p>
+      <h2>Beneficios que <em>te encantarán</em></h2>
+    </div>
+    <div class="benefit-grid">
+      <div class="benefit-card reveal">
+        <span class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="13" height="11" rx="1.5"/><path d="M14 9h4l3 3v5h-7z"/><circle cx="6" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg></span>
+        <h3>Envío rápido</h3>
+        <p>Despacho a domicilio en San Clemente y alrededores.</p>
+      </div>
+      <div class="benefit-card reveal reveal-d1">
+        <span class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7z"/></svg></span>
+        <h3>Productos de calidad</h3>
+        <p>Marcas reconocidas y de confianza para tu mascota.</p>
+      </div>
+      <div class="benefit-card reveal reveal-d2">
+        <span class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-9 8.34 8.5 8.5 0 01-3.8-.9L3 20l1.06-3.18A8.38 8.38 0 013.66 8 8.5 8.5 0 0112 3.5a8.38 8.38 0 019 8z"/></svg></span>
+        <h3>Atención personalizada</h3>
+        <p>Te asesoramos por WhatsApp para elegir lo mejor.</p>
+      </div>
+      <div class="benefit-card reveal reveal-d3">
+        <span class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0l-1 1-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span>
+        <h3>Garantía de satisfacción</h3>
+        <p>Si algo no está bien, lo solucionamos contigo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS TIENDA -->
+<section id="testimonios" class="soft-band only-tienda">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Testimonios</p>
+      <h2>Lo que dicen <em>nuestros clientes</em></h2>
+    </div>
+    <div class="testi-grid">
+      <article class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Excelente atención y los precios son muy buenos. Me llegó todo rapidísimo a la casa."</p>
+        <div class="testi-author"><span class="testi-pic"><svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="5.5" cy="12" rx="1.9" ry="2.5"/><ellipse cx="9.8" cy="8" rx="1.9" ry="2.5"/><ellipse cx="14.2" cy="8" rx="1.9" ry="2.5"/><ellipse cx="18.5" cy="12" rx="1.9" ry="2.5"/><path d="M12 12.5c2.8 0 5 2.2 5 4.6 0 1.9-1.8 2.9-5 2.9s-5-1-5-2.9c0-2.4 2.2-4.6 5-4.6z"/></svg></span><span><strong>Carolina R.</strong>Dueña de Rocco</span></div>
+      </article>
+      <article class="testi-card reveal reveal-d1">
+        <div class="stars">★★★★★</div>
+        <p>"Siempre encuentro el alimento de mi gata. Muy amables al asesorarme por WhatsApp."</p>
+        <div class="testi-author"><span class="testi-pic"><svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="5.5" cy="12" rx="1.9" ry="2.5"/><ellipse cx="9.8" cy="8" rx="1.9" ry="2.5"/><ellipse cx="14.2" cy="8" rx="1.9" ry="2.5"/><ellipse cx="18.5" cy="12" rx="1.9" ry="2.5"/><path d="M12 12.5c2.8 0 5 2.2 5 4.6 0 1.9-1.8 2.9-5 2.9s-5-1-5-2.9c0-2.4 2.2-4.6 5-4.6z"/></svg></span><span><strong>Felipe M.</strong>Dueño de Luna</span></div>
+      </article>
+      <article class="testi-card reveal reveal-d2">
+        <div class="stars">★★★★★</div>
+        <p>"Una tienda local que se nota que ama a los animales. ¡Totalmente recomendados!"</p>
+        <div class="testi-author"><span class="testi-pic"><svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="5.5" cy="12" rx="1.9" ry="2.5"/><ellipse cx="9.8" cy="8" rx="1.9" ry="2.5"/><ellipse cx="14.2" cy="8" rx="1.9" ry="2.5"/><ellipse cx="18.5" cy="12" rx="1.9" ry="2.5"/><path d="M12 12.5c2.8 0 5 2.2 5 4.6 0 1.9-1.8 2.9-5 2.9s-5-1-5-2.9c0-2.4 2.2-4.6 5-4.6z"/></svg></span><span><strong>Daniela P.</strong>Dueña de Copito</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ==================  MODO RESTAURANTE  ====================== -->
+<!-- ============================================================ -->
+
+<!-- HERO RESTAURANTE -->
+<section class="hero hero-resto only-resto" id="inicio-resto">
+  <div class="wrap hero-inner reveal">
+    <div class="hero-badge"><span class="dot"></span> Restaurante familiar en San Clemente</div>
+    <h1>Comida <em>casera</em> y bien servida, como en casa</h1>
+    <p class="lead">Completos, sándwiches, pizzas, fajitas y menús del día. Para disfrutar en el local o pedir a domicilio.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#menu">Ver el menú</a>
+      <a class="btn btn-wa" href="https://wa.me/56987199748?text=Hola%20Ant%C3%BCmalen%2C%20quiero%20hacer%20un%20pedido%20al%20restaurante." target="_blank" rel="noopener">
+        <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.526 5.297l-.999 3.648 3.962-1.044zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Pedir por WhatsApp
+      </a>
+    </div>
+    <div class="hero-trust">
+      <span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.7 6.8 19.2l1-5.8L3.5 9.2l5.9-.9z"/></svg> Comida rica y casera</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="6" width="13" height="11" rx="1.5"/><path d="M14 9h4l3 3v5h-7z"/><circle cx="6" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg> Delivery y para llevar</span>
+    </div>
+  </div>
+</section>
+
+<!-- INFO RESTAURANTE -->
+<section id="info" class="only-resto">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Información</p>
+      <h2>Te atendemos <em>todos los días</em></h2>
+    </div>
+    <div class="benefit-grid">
+      <div class="benefit-card reveal">
+        <span class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+        <h3>Horario</h3>
+        <p>Lun a Sáb 9:30–20:30<br>Dom 9:30–15:30</p>
+      </div>
+      <div class="benefit-card reveal reveal-d1">
+        <span class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="13" height="11" rx="1.5"/><path d="M14 9h4l3 3v5h-7z"/><circle cx="6" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg></span>
+        <h3>Servicio</h3>
+        <p>Entrega a domicilio y visita rápida para comer en el local.</p>
+      </div>
+      <div class="benefit-card reveal reveal-d2">
+        <span class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20M6 15h4"/></svg></span>
+        <h3>Medios de pago</h3>
+        <p>Efectivo, tarjetas de crédito y débito, y pagos con NFC.</p>
+      </div>
+      <div class="benefit-card reveal reveal-d3">
+        <span class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <h3>Dónde estamos</h3>
+        <p>Ruta 115 #837 / Huamachuco #830, San Clemente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENÚ -->
+<section id="menu" class="soft-band only-resto">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Nuestro menú</p>
+      <h2>Elige y <em>pide por WhatsApp</em></h2>
+      <p>Agrega tus platos al pedido y te confirmamos disponibilidad y entrega.</p>
+    </div>
+    <div class="filters" id="menuFilters" role="tablist" aria-label="Categorías del menú"></div>
+    <div class="product-grid" id="menuGrid"></div>
+    <p class="menu-note reveal">Precios y platos de referencia. La carta puede variar — consúltanos por WhatsApp. 🙂</p>
+  </div>
+</section>
+
+<!-- TESTIMONIOS RESTAURANTE (reseñas reales de Google) -->
+<section id="testimonios-resto" class="only-resto">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Opiniones</p>
+      <h2>Lo que dicen <em>en Google</em></h2>
+    </div>
+    <div class="testi-grid">
+      <article class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Excelente lugar acogedor en San Clemente, precios bajos, rica comida y atención cordial. Buenos menús para servir o llevar."</p>
+        <div class="testi-author"><span class="testi-pic">MU</span><span><strong>Manuel U.</strong>Local Guide</span></div>
+      </article>
+      <article class="testi-card reveal reveal-d1">
+        <div class="stars">★★★★★</div>
+        <p>"Muy buena atención y rica la comida, como si fuera de casa. Muy buenos sus completos, 100% recomendable."</p>
+        <div class="testi-author"><span class="testi-pic">FV</span><span><strong>Francisco V.</strong>Cliente</span></div>
+      </article>
+      <article class="testi-card reveal reveal-d2">
+        <div class="stars">★★★★★</div>
+        <p>"Ricas fajitas, pizzas y sándwiches. Un momento agradable junto a la familia, Antümalen es la mejor opción."</p>
+        <div class="testi-author"><span class="testi-pic">JM</span><span><strong>Jaime M.</strong>Local Guide</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER / CONTACTO (compartido) ===== -->
+<footer id="contacto">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="brand" href="#inicio">
+        <img src="imagenes/logo/Antumalen_logo_nobg.png" alt="Antümalen" class="brand-logo only-tienda">
+        <img src="imagenes/logo/Antumalen_restaurante_logo_nobg.png" alt="Antümalen Restaurante" class="brand-logo only-resto">
+        <span class="brand-name">Antümalen</span>
+      </a>
+      <p class="foot-desc">Tienda de mascotas y restaurante de comida casera, en el mismo lugar en San Clemente, Región del Maule.</p>
+      <div class="foot-social">
+        <a href="https://www.instagram.com/antumalenpets/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://web.facebook.com/people/Ant%C3%BCmalen-Pets/100069050627029/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2.5A3.5 3.5 0 009 6.5V9H6.5v3H9v9h3v-9h2.5l.5-3H12V6.8c0-.6.3-.8.9-.8H15z"/></svg></a>
+      </div>
+    </div>
+    <nav class="foot-col" aria-label="Enlaces rápidos">
+      <h4>Enlaces</h4>
+      <a href="#" data-set-mode="tienda">Tienda de mascotas</a>
+      <a href="#" data-set-mode="restaurante">Restaurante</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="foot-col">
+      <h4>Contacto</h4>
+      <a class="wa-cta" href="https://wa.me/56987199748?text=Hola%20Ant%C3%BCmalen%2C%20tengo%20una%20consulta." target="_blank" rel="noopener">
+        <span class="wa-cta-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.526 5.297l-.999 3.648 3.962-1.044zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></span>
+        <span class="wa-cta-text"><strong>+56 9 8719 9748</strong><span>Escríbenos por WhatsApp</span></span>
+      </a>
+      <span class="foot-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> Tienda: Lun-Sáb 10–20 · Resto: Lun-Sáb 9:30–20:30</span>
+      <span class="foot-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Ruta 115 #837 / Huamachuco #830, San Clemente</span>
+    </div>
+    <div class="foot-map">
+      <iframe title="Ubicación de Antümalen" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Ruta%20115%20837,%20San%20Clemente,%20Maule,%20Chile&output=embed"></iframe>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© <span id="year"></span> Antümalen. Todos los derechos reservados.</span>
+    <span class="foot-credit">Tienda de mascotas y restaurante · San Clemente</span>
+  </div>
+</footer>
+
+<!-- ===== CARRITO (drawer) ===== -->
+<div class="cart-overlay" id="cartOverlay" hidden></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de compras" aria-hidden="true">
+  <div class="cart-head">
+    <h3 id="cartTitle">Tu pedido</h3>
+    <button class="cart-close" id="cartClose" aria-label="Cerrar carrito">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot">
+    <div class="cart-total"><span>Total</span><strong id="cartTotal">$0</strong></div>
+    <a class="btn btn-wa btn-block" id="cartWhatsapp" href="#" target="_blank" rel="noopener">
+      <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.526 5.297l-.999 3.648 3.962-1.044zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      Enviar pedido por WhatsApp
+    </a>
+    <p class="cart-note">El pedido se envía como mensaje de WhatsApp. Coordinamos pago y entrega por ahí.</p>
+  </div>
+</aside>
+
+<!-- Botón flotante WhatsApp -->
+<a class="wa-float" href="https://wa.me/56987199748?text=Hola%20Ant%C3%BCmalen%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.526 5.297l-.999 3.648 3.962-1.044zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script src="js/productos.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
