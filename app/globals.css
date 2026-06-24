@@ -191,6 +191,11 @@
   --pm-ph-b: #ddd3c4;
   --pm-ph-fg: #b3a48f;
 
+  /* Superficies / bordes / texto sobre acento (claro por defecto) */
+  --pm-surface-2: rgba(0, 0, 0, 0.05);
+  --pm-border: rgba(0, 0, 0, 0.1);
+  --pm-on-accent: #ffffff;
+
   /* Fuentes con indirección (el panel de temas las puede cambiar) */
   --pm-font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --pm-font-display: var(--font-playfair), Georgia, serif;

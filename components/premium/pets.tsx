@@ -108,7 +108,7 @@ export function PetsView() {
                   tu mejor amigo
                 </span>
               </h1>
-              <p className="mt-5 max-w-lg text-base text-[#5e564c] sm:text-lg">
+              <p className="mt-5 max-w-lg text-base text-[color:var(--pm-muted)] sm:text-lg">
                 Alimentos premium, accesorios y cuidado pensado con amor para
                 perros, gatos, aves y más. Pide en pocos pasos y recíbelo en
                 casa.
@@ -124,7 +124,7 @@ export function PetsView() {
                 </a>
                 <a
                   href="#productos"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--pm-brown)] px-7 py-4 font-poppins font-semibold text-white transition-transform hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--pm-fg)] px-7 py-4 font-poppins font-semibold text-[color:var(--pm-surface)] transition-transform hover:-translate-y-0.5"
                 >
                   Ver productos
                 </a>
@@ -134,7 +134,7 @@ export function PetsView() {
                   (b) => (
                     <div
                       key={b}
-                      className="flex items-center gap-2 text-sm text-[#5e564c]"
+                      className="flex items-center gap-2 text-sm text-[color:var(--pm-muted)]"
                     >
                       <Sparkles className="size-4 flex-none text-[color:var(--pm-sage-dark)]" />
                       {b}
@@ -170,7 +170,7 @@ export function PetsView() {
                     href="#productos"
                     className="group flex flex-col items-center gap-3"
                   >
-                    <div className="grid size-20 place-items-center rounded-full bg-white shadow-[0_8px_24px_rgba(92,75,59,0.08)] transition-all duration-300 group-hover:-translate-y-1.5 group-hover:scale-105 group-hover:shadow-[0_16px_36px_rgba(92,75,59,0.16)] sm:size-24">
+                    <div className="grid size-20 place-items-center rounded-full bg-[color:var(--pm-surface)] shadow-[0_8px_24px_rgba(92,75,59,0.08)] transition-all duration-300 group-hover:-translate-y-1.5 group-hover:scale-105 group-hover:shadow-[0_16px_36px_rgba(92,75,59,0.16)] sm:size-24">
                       <c.icon className="size-8 text-[color:var(--pm-sage-dark)]" strokeWidth={1.6} />
                     </div>
                     <span className="font-poppins text-sm font-medium text-[color:var(--pm-brown)]">
@@ -207,7 +207,7 @@ export function PetsView() {
             <Stagger className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {BENEFICIOS.map((b) => (
                 <StaggerItem key={b.t}>
-                  <div className="flex h-full items-start gap-4 rounded-3xl bg-white p-6 shadow-[0_4px_18px_rgba(92,75,59,0.06)] transition-transform hover:-translate-y-1">
+                  <div className="flex h-full items-start gap-4 rounded-3xl bg-[color:var(--pm-surface)] p-6 shadow-[0_4px_18px_rgba(92,75,59,0.06)] transition-transform hover:-translate-y-1">
                     <div className="grid size-12 flex-none place-items-center rounded-2xl bg-[color:var(--pm-sage)]/15 text-[color:var(--pm-sage-dark)]">
                       <b.icon className="size-6" strokeWidth={1.7} />
                     </div>
@@ -226,15 +226,15 @@ export function PetsView() {
 
         {/* ---------- PROMOCIONAL / NOSOTROS ---------- */}
         <section id="nosotros" className="px-5 py-20 sm:px-8">
-          <div className="mx-auto grid w-full max-w-7xl items-center gap-10 overflow-hidden rounded-[2rem] bg-[color:var(--pm-brown)] p-8 text-white sm:p-12 lg:grid-cols-2">
+          <div className="mx-auto grid w-full max-w-7xl items-center gap-10 overflow-hidden rounded-[2rem] bg-[color:var(--pm-fg)] p-8 text-[color:var(--pm-surface)] sm:p-12 lg:grid-cols-2">
             <Reveal>
-              <span className="font-poppins text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--pm-sage)]">
+              <span className="font-poppins text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--pm-surface)]/70">
                 Antümalen
               </span>
               <h2 className="font-display mt-3 text-3xl font-bold leading-tight sm:text-4xl">
                 Todo lo que necesitan en un solo lugar
               </h2>
-              <p className="mt-4 max-w-md text-white/75">
+              <p className="mt-4 max-w-md text-[color:var(--pm-surface)]/75">
                 Somos un emprendimiento familiar de San Clemente. Cuidamos a tu
                 mascota como parte de la familia: alimento, accesorios y
                 asesoría cercana, con la confianza de quienes aman a los
@@ -244,7 +244,7 @@ export function PetsView() {
                 href={waLink("¡Hola Antümalen! 🐾 Quiero más información.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-poppins font-semibold text-[color:var(--pm-brown)] transition-transform hover:-translate-y-0.5"
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-[color:var(--pm-surface)] px-6 py-3 font-poppins font-semibold text-[color:var(--pm-fg)] transition-transform hover:-translate-y-0.5"
               >
                 Conversemos
               </a>
@@ -281,9 +281,9 @@ export function PetsView() {
             <Stagger className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {TESTIMONIOS.map((t) => (
                 <StaggerItem key={t.n}>
-                  <div className="flex h-full flex-col rounded-3xl bg-white p-7 shadow-[0_4px_18px_rgba(92,75,59,0.06)]">
+                  <div className="flex h-full flex-col rounded-3xl bg-[color:var(--pm-surface)] p-7 shadow-[0_4px_18px_rgba(92,75,59,0.06)]">
                     <Stars value={t.r} />
-                    <p className="mt-4 flex-1 text-[#4f4840]">“{t.c}”</p>
+                    <p className="mt-4 flex-1 text-[color:var(--pm-fg)]">“{t.c}”</p>
                     <div className="mt-5 flex items-center gap-3">
                       <div className="pm-ph size-12 rounded-full" />
                       <div>
@@ -302,19 +302,19 @@ export function PetsView() {
         <section className="px-5 pb-24 sm:px-8">
           <Reveal
             kind="scale"
-            className="mx-auto w-full max-w-7xl overflow-hidden rounded-[2rem] bg-[color:var(--pm-sage)] px-8 py-16 text-center text-white sm:py-20"
+            className="mx-auto w-full max-w-7xl overflow-hidden rounded-[2rem] bg-[color:var(--pm-sage)] px-8 py-16 text-center text-[color:var(--pm-on-accent)] sm:py-20"
           >
             <h2 className="font-display text-3xl font-bold sm:text-4xl">
               ¿Necesitas ayuda para elegir el producto ideal?
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-white/90">
+            <p className="mx-auto mt-4 max-w-xl text-[color:var(--pm-on-accent)]/90">
               Escríbenos y te asesoramos al instante para que tu mejor amigo
               tenga todo lo que necesita.
             </p>
             <button
               type="button"
               onClick={() => setCartOpen(true)}
-              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-poppins font-semibold text-[color:var(--pm-sage-dark)] transition-transform hover:-translate-y-0.5"
+              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--pm-surface)] px-8 py-4 font-poppins font-semibold text-[color:var(--pm-fg)] transition-transform hover:-translate-y-0.5"
             >
               Ver mi pedido
             </button>

@@ -92,26 +92,26 @@ export function RestaurantView() {
             className="absolute inset-0 -z-10"
             style={{
               background:
-                "radial-gradient(120% 120% at 80% 10%, rgba(201,168,106,0.22), transparent 45%), radial-gradient(100% 100% at 10% 90%, rgba(201,168,106,0.14), transparent 50%), linear-gradient(135deg, #161311 0%, #121212 55%, #211c17 100%)",
+                "radial-gradient(120% 120% at 80% 10%, color-mix(in srgb, var(--pm-accent) 26%, transparent), transparent 45%), radial-gradient(100% 100% at 10% 90%, color-mix(in srgb, var(--pm-accent) 16%, transparent), transparent 50%), var(--pm-bg)",
             }}
           />
           <div
-            className="absolute inset-0 -z-10 opacity-50"
+            className="absolute inset-0 -z-10"
             style={{
               backgroundImage:
-                "radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px)",
+                "radial-gradient(color-mix(in srgb, var(--pm-fg) 6%, transparent) 1px, transparent 1px)",
               backgroundSize: "22px 22px",
             }}
           />
           <div className="mx-auto grid w-full max-w-7xl items-center gap-12 py-16 lg:grid-cols-2">
             <Reveal>
-              <span className="font-poppins text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--pm-gold)]">
+              <span className="font-poppins text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--pm-accent-dark)]">
                 San Clemente · Comida casera
               </span>
-              <h1 className="font-display mt-4 text-4xl font-extrabold leading-[1.05] text-white sm:text-5xl lg:text-6xl">
-                Sabores que <span className="italic text-[color:var(--pm-gold)]">te hacen volver</span>
+              <h1 className="font-display mt-4 text-4xl font-extrabold leading-[1.05] text-[color:var(--pm-fg)] sm:text-5xl lg:text-6xl">
+                Sabores que <span className="italic text-[color:var(--pm-accent-dark)]">te hacen volver</span>
               </h1>
-              <p className="mt-5 max-w-lg text-base text-white/70 sm:text-lg">
+              <p className="mt-5 max-w-lg text-base text-[color:var(--pm-muted)] sm:text-lg">
                 Completos, pizzas artesanales, sándwiches y menús del día
                 preparados con cariño. Un ambiente familiar para disfrutar acá o
                 pedir para llevar.
@@ -119,7 +119,7 @@ export function RestaurantView() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
                   href="#menu"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--pm-gold)] px-7 py-4 font-poppins font-semibold text-[#1b1b1b] transition-transform hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--pm-accent)] px-7 py-4 font-poppins font-semibold text-[color:var(--pm-on-accent)] transition-transform hover:-translate-y-0.5"
                 >
                   Ver Menú
                 </a>
@@ -139,10 +139,10 @@ export function RestaurantView() {
                   { b: "Delivery", s: "y para llevar" },
                 ].map((m) => (
                   <div key={m.s}>
-                    <b className="font-display text-2xl font-bold text-[color:var(--pm-gold)]">
+                    <b className="font-display text-2xl font-bold text-[color:var(--pm-accent-dark)]">
                       {m.b}
                     </b>
-                    <p className="text-sm text-white/60">{m.s}</p>
+                    <p className="text-sm text-[color:var(--pm-muted)]">{m.s}</p>
                   </div>
                 ))}
               </div>
@@ -153,7 +153,7 @@ export function RestaurantView() {
                 ratio="3 / 4"
                 icon={ChefHat}
                 label="Foto gastronómica"
-                className="bg-white/[0.06] shadow-[0_30px_80px_rgba(0,0,0,0.5)]"
+                className="shadow-[0_30px_70px_rgba(0,0,0,0.25)]"
               />
             </Reveal>
           </div>
@@ -176,8 +176,8 @@ export function RestaurantView() {
                   className={cn(
                     "inline-flex items-center gap-2 rounded-full px-4 py-2.5 font-poppins text-sm font-semibold transition-all",
                     cat === c.id
-                      ? "bg-[color:var(--pm-carbon)] text-white"
-                      : "bg-white text-[color:var(--pm-carbon)] shadow-sm hover:-translate-y-0.5",
+                      ? "bg-[color:var(--pm-fg)] text-[color:var(--pm-surface)]"
+                      : "bg-[color:var(--pm-surface)] text-[color:var(--pm-fg)] shadow-sm hover:-translate-y-0.5",
                   )}
                 >
                   <c.icon className="size-4" />
@@ -265,10 +265,10 @@ export function RestaurantView() {
               <Placeholder ratio="4 / 3" icon={Sparkles} label="Interior del local" />
             </Reveal>
             <Reveal>
-              <span className="font-poppins text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--pm-gold-dark)]">
+              <span className="font-poppins text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--pm-accent-dark)]">
                 Ambiente que enamora
               </span>
-              <h2 className="font-display mt-3 text-3xl font-bold leading-tight text-[color:var(--pm-carbon)] sm:text-4xl">
+              <h2 className="font-display mt-3 text-3xl font-bold leading-tight text-[color:var(--pm-fg)] sm:text-4xl">
                 Un espacio para disfrutar en familia
               </h2>
               <p className="mt-4 max-w-md text-[color:var(--pm-muted)]">
@@ -280,7 +280,7 @@ export function RestaurantView() {
                 href={waLink("¡Hola Antümalen! 🍽️ Quiero reservar / consultar.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-2 rounded-full bg-[color:var(--pm-carbon)] px-6 py-3 font-poppins font-semibold text-white transition-transform hover:-translate-y-0.5"
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-[color:var(--pm-fg)] px-6 py-3 font-poppins font-semibold text-[color:var(--pm-surface)] transition-transform hover:-translate-y-0.5"
               >
                 Escríbenos
               </a>
@@ -295,13 +295,13 @@ export function RestaurantView() {
             <Stagger className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {TESTIMONIOS.map((t, i) => (
                 <StaggerItem key={i}>
-                  <div className="flex h-full flex-col rounded-3xl bg-white p-7 shadow-[0_4px_18px_rgba(0,0,0,0.05)]">
+                  <div className="flex h-full flex-col rounded-3xl bg-[color:var(--pm-surface)] p-7 shadow-[0_4px_18px_rgba(0,0,0,0.05)]">
                     <Stars value={t.r} />
-                    <p className="mt-4 flex-1 text-[color:var(--pm-carbon)]/80">“{t.c}”</p>
+                    <p className="mt-4 flex-1 text-[color:var(--pm-fg)]/80">“{t.c}”</p>
                     <div className="mt-5 flex items-center gap-3">
                       <div className="pm-ph size-12 rounded-full" />
                       <div>
-                        <b className="font-poppins text-sm text-[color:var(--pm-carbon)]">{t.n}</b>
+                        <b className="font-poppins text-sm text-[color:var(--pm-fg)]">{t.n}</b>
                         <p className="text-xs text-[color:var(--pm-muted)]">San Clemente</p>
                       </div>
                     </div>

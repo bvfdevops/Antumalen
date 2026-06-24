@@ -31,7 +31,7 @@ export function ProductCard({
   }
 
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-[0_4px_18px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_28px_60px_rgba(0,0,0,0.14)]">
+    <article className="group flex h-full flex-col overflow-hidden rounded-3xl bg-[color:var(--pm-surface)] shadow-[0_4px_18px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_28px_60px_rgba(0,0,0,0.14)]">
       <div className="relative overflow-hidden">
         {badge ? (
           <span className="absolute left-3 top-3 z-10 rounded-full bg-[color:var(--pm-accent)] px-3 py-1 font-poppins text-[0.7rem] font-semibold text-[#1b1b1b]">
@@ -58,12 +58,12 @@ export function ProductCard({
           <span className="font-display text-xl font-bold text-[color:var(--pm-accent-dark)]">
             {CLP(producto.precio)}
           </span>
-          <div className="flex items-center gap-1 rounded-full bg-black/5 p-1">
+          <div className="flex items-center gap-1 rounded-full bg-[color:var(--pm-surface-2)] p-1">
             <button
               type="button"
               onClick={() => setQty((q) => Math.max(1, q - 1))}
               aria-label="Restar"
-              className="grid size-7 place-items-center rounded-full text-[color:var(--pm-fg)] transition-colors hover:bg-white"
+              className="grid size-7 place-items-center rounded-full text-[color:var(--pm-fg)] transition-colors hover:bg-[color:var(--pm-surface)]"
             >
               <Minus className="size-3.5" />
             </button>
@@ -72,7 +72,7 @@ export function ProductCard({
               type="button"
               onClick={() => setQty((q) => q + 1)}
               aria-label="Sumar"
-              className="grid size-7 place-items-center rounded-full text-[color:var(--pm-fg)] transition-colors hover:bg-white"
+              className="grid size-7 place-items-center rounded-full text-[color:var(--pm-fg)] transition-colors hover:bg-[color:var(--pm-surface)]"
             >
               <Plus className="size-3.5" />
             </button>
@@ -85,7 +85,7 @@ export function ProductCard({
             "mt-4 flex w-full items-center justify-center gap-2 rounded-full py-3 font-poppins text-sm font-semibold transition-all hover:-translate-y-0.5",
             done
               ? "bg-[#25D366] text-white"
-              : "bg-[color:var(--pm-fg)] text-white hover:bg-[color:var(--pm-accent-dark)]",
+              : "bg-[color:var(--pm-fg)] text-[color:var(--pm-surface)] hover:bg-[color:var(--pm-accent-dark)]",
           )}
         >
           {done ? (

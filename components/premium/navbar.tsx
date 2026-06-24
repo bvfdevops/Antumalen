@@ -50,20 +50,14 @@ export function Navbar({ view }: { view: "mascotas" | "restaurante" }) {
     };
   }, [open]);
 
-  // Texto claro sobre el hero (solo restaurante, en el tope, sin scroll).
-  const lightOnTop = isResto && !scrolled;
-  const textColor = lightOnTop ? "text-white" : "text-[color:var(--pm-fg)]";
-
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div
         className={cn(
           "transition-all duration-300",
           scrolled
-            ? "border-b border-black/5 bg-[color:var(--pm-bg)]/80 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.06)]"
-            : lightOnTop
-              ? "bg-gradient-to-b from-black/40 via-black/15 to-transparent"
-              : "bg-transparent",
+            ? "border-b border-[color:var(--pm-border)] bg-[color:var(--pm-bg)]/80 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.06)]"
+            : "bg-transparent",
         )}
       >
         <nav className="mx-auto flex h-[68px] w-full max-w-7xl items-center justify-between px-5 sm:px-8">
@@ -81,15 +75,10 @@ export function Navbar({ view }: { view: "mascotas" | "restaurante" }) {
               alt="Antümalen"
               width={44}
               height={44}
-              className="size-10 rounded-xl object-cover shadow-sm ring-1 ring-black/10"
+              className="size-10 rounded-xl object-cover shadow-sm ring-1 ring-[color:var(--pm-border)]"
               priority
             />
-            <span
-              className={cn(
-                "font-display text-lg font-bold tracking-tight",
-                textColor,
-              )}
-            >
+            <span className="font-display text-lg font-bold tracking-tight text-[color:var(--pm-fg)]">
               Antümalen
             </span>
           </Link>
@@ -100,12 +89,7 @@ export function Navbar({ view }: { view: "mascotas" | "restaurante" }) {
               <a
                 key={l.label}
                 href={l.href}
-                className={cn(
-                  "rounded-full px-4 py-2 text-sm font-medium transition-colors",
-                  lightOnTop
-                    ? "text-white/90 hover:bg-white/10 hover:text-white"
-                    : "text-[color:var(--pm-fg)] hover:bg-black/5",
-                )}
+                className="rounded-full px-4 py-2 text-sm font-medium text-[color:var(--pm-fg)] transition-colors hover:bg-[color:var(--pm-surface-2)]"
               >
                 {l.label}
               </a>
@@ -117,10 +101,8 @@ export function Navbar({ view }: { view: "mascotas" | "restaurante" }) {
             <Link
               href={r(isResto ? "/premium" : "/premium/restaurante")}
               className={cn(
-                "hidden items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition-all hover:-translate-y-0.5 sm:inline-flex",
-                isResto
-                  ? "bg-[color:var(--pm-accent)] text-[#1b1b1b]"
-                  : "bg-[color:var(--pm-brown)] text-white",
+                "hidden items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold text-[color:var(--pm-surface)] transition-all hover:-translate-y-0.5 sm:inline-flex",
+                "bg-[color:var(--pm-fg)]",
               )}
             >
               <UtensilsCrossed className="size-4" />
@@ -132,7 +114,7 @@ export function Navbar({ view }: { view: "mascotas" | "restaurante" }) {
               onClick={() => setCartOpen(true)}
               aria-label="Abrir carrito"
               className={cn(
-                "relative grid size-11 place-items-center rounded-xl bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md",
+                "relative grid size-11 place-items-center rounded-xl bg-[color:var(--pm-surface)] shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md",
               )}
             >
               <ShoppingBag className="size-5 text-[color:var(--pm-fg)]" />
@@ -154,7 +136,7 @@ export function Navbar({ view }: { view: "mascotas" | "restaurante" }) {
               type="button"
               onClick={() => setOpen(true)}
               aria-label="Abrir menú"
-              className="grid size-11 place-items-center rounded-xl bg-white shadow-sm lg:hidden"
+              className="grid size-11 place-items-center rounded-xl bg-[color:var(--pm-surface)] shadow-sm lg:hidden"
             >
               <Menu className="size-5 text-[color:var(--pm-fg)]" />
             </button>
@@ -188,7 +170,7 @@ export function Navbar({ view }: { view: "mascotas" | "restaurante" }) {
                   type="button"
                   onClick={() => setOpen(false)}
                   aria-label="Cerrar menú"
-                  className="grid size-10 place-items-center rounded-full bg-white shadow-sm"
+                  className="grid size-10 place-items-center rounded-full bg-[color:var(--pm-surface)] shadow-sm"
                 >
                   <X className="size-5 text-[color:var(--pm-fg)]" />
                 </button>
@@ -199,7 +181,7 @@ export function Navbar({ view }: { view: "mascotas" | "restaurante" }) {
                     key={l.label}
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="rounded-2xl px-4 py-3.5 text-base font-medium text-[color:var(--pm-fg)] transition-colors hover:bg-black/5"
+                    className="rounded-2xl px-4 py-3.5 text-base font-medium text-[color:var(--pm-fg)] transition-colors hover:bg-[color:var(--pm-surface-2)]"
                   >
                     {l.label}
                   </a>

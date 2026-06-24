@@ -8,32 +8,45 @@ import { cn } from "@/lib/utils";
 /* ============================================================
    ThemeLab — panel de previsualización (izquierda, bajo el header)
    Cambia EN VIVO la paleta completa (fondo, texto, secundario,
-   acento, placeholders) y las fuentes, escribiendo variables CSS
-   sobre el contenedor .premium. Solo afecta la opción /premium.
+   acento, superficies, bordes, placeholders) y las fuentes,
+   escribiendo variables CSS sobre el contenedor .premium.
+   El propio panel usa colores fijos para ser legible en cualquier
+   tema (incluidos los oscuros).
    ============================================================ */
 
 type Palette = {
   id: string;
   name: string;
+  dark?: boolean;
   bg: string;
   surface: string;
+  surface2: string;
+  border: string;
   text: string;
   muted: string;
   accent: string;
   accentDark: string;
+  onAccent: string;
   heading: string;
   phA: string;
   phB: string;
   phFg: string;
 };
 
+const LIGHT_S2 = "rgba(0,0,0,0.05)";
+const LIGHT_BORDER = "rgba(0,0,0,0.10)";
+const DARK_S2 = "rgba(255,255,255,0.06)";
+const DARK_BORDER = "rgba(255,255,255,0.12)";
+
 const PALETTES: Palette[] = [
-  { id: "salvia", name: "Salvia", bg: "#f3f7f2", surface: "#ffffff", text: "#243024", muted: "#6f7a6f", accent: "#7bae7f", accentDark: "#4f7d54", heading: "#2f4a33", phA: "#e6eee6", phB: "#d3e0d4", phFg: "#9fb3a1" },
-  { id: "dorado", name: "Dorado", bg: "#f6f1e8", surface: "#ffffff", text: "#1c1814", muted: "#6b7280", accent: "#c9a86a", accentDark: "#8c6d35", heading: "#2a2118", phA: "#ece6da", phB: "#ddd4c4", phFg: "#b3a48f" },
-  { id: "terracota", name: "Terracota", bg: "#fbf5f0", surface: "#ffffff", text: "#3a2820", muted: "#8a7163", accent: "#c2703d", accentDark: "#9c5527", heading: "#3a2820", phA: "#efe4db", phB: "#e0cdbf", phFg: "#bda692" },
-  { id: "oceano", name: "Océano", bg: "#eef5f6", surface: "#ffffff", text: "#13282c", muted: "#5b7176", accent: "#2a9d8f", accentDark: "#1d7065", heading: "#13282c", phA: "#e0ebec", phB: "#ccdcde", phFg: "#9bb3b6" },
-  { id: "lavanda", name: "Lavanda", bg: "#f5f3fb", surface: "#ffffff", text: "#272238", muted: "#6c6782", accent: "#8b7bd8", accentDark: "#5b4ca6", heading: "#272238", phA: "#e9e6f3", phB: "#d8d3e8", phFg: "#a9a3c0" },
-  { id: "coral", name: "Coral", bg: "#fdf3f1", surface: "#ffffff", text: "#3a2422", muted: "#8a6f6b", accent: "#e76f51", accentDark: "#c14d31", heading: "#3a2422", phA: "#f3e3df", phB: "#e8cdc6", phFg: "#c4a59d" },
+  { id: "salvia", name: "Salvia", bg: "#f3f7f2", surface: "#ffffff", surface2: LIGHT_S2, border: LIGHT_BORDER, text: "#243024", muted: "#6f7a6f", accent: "#7bae7f", accentDark: "#4f7d54", onAccent: "#ffffff", heading: "#2f4a33", phA: "#e6eee6", phB: "#d3e0d4", phFg: "#9fb3a1" },
+  { id: "dorado", name: "Dorado", bg: "#f6f1e8", surface: "#ffffff", surface2: LIGHT_S2, border: LIGHT_BORDER, text: "#1c1814", muted: "#6b7280", accent: "#c9a86a", accentDark: "#8c6d35", onAccent: "#1c1814", heading: "#2a2118", phA: "#ece6da", phB: "#ddd4c4", phFg: "#b3a48f" },
+  { id: "terracota", name: "Terracota", bg: "#fbf5f0", surface: "#ffffff", surface2: LIGHT_S2, border: LIGHT_BORDER, text: "#3a2820", muted: "#8a7163", accent: "#c2703d", accentDark: "#9c5527", onAccent: "#ffffff", heading: "#3a2820", phA: "#efe4db", phB: "#e0cdbf", phFg: "#bda692" },
+  { id: "oceano", name: "Océano", bg: "#eef5f6", surface: "#ffffff", surface2: LIGHT_S2, border: LIGHT_BORDER, text: "#13282c", muted: "#5b7176", accent: "#2a9d8f", accentDark: "#1d7065", onAccent: "#ffffff", heading: "#13282c", phA: "#e0ebec", phB: "#ccdcde", phFg: "#9bb3b6" },
+  { id: "lavanda", name: "Lavanda", bg: "#f5f3fb", surface: "#ffffff", surface2: LIGHT_S2, border: LIGHT_BORDER, text: "#272238", muted: "#6c6782", accent: "#8b7bd8", accentDark: "#5b4ca6", onAccent: "#ffffff", heading: "#272238", phA: "#e9e6f3", phB: "#d8d3e8", phFg: "#a9a3c0" },
+  { id: "coral", name: "Coral", bg: "#fdf3f1", surface: "#ffffff", surface2: LIGHT_S2, border: LIGHT_BORDER, text: "#3a2422", muted: "#8a6f6b", accent: "#e76f51", accentDark: "#c14d31", onAccent: "#ffffff", heading: "#3a2422", phA: "#f3e3df", phB: "#e8cdc6", phFg: "#c4a59d" },
+  { id: "carbon", name: "Carbón", dark: true, bg: "#16161b", surface: "#20202a", surface2: DARK_S2, border: DARK_BORDER, text: "#f2f0ec", muted: "#a8a4ad", accent: "#d9a441", accentDark: "#ecc36b", onAccent: "#1b1b1b", heading: "#ffffff", phA: "#2a2a34", phB: "#34343f", phFg: "#6f6f7b" },
+  { id: "medianoche", name: "Medianoche", dark: true, bg: "#10141f", surface: "#1a2030", surface2: DARK_S2, border: DARK_BORDER, text: "#eef1f7", muted: "#9aa4ba", accent: "#5b9bd5", accentDark: "#93c0ec", onAccent: "#0e1626", heading: "#ffffff", phA: "#232c40", phB: "#2d3850", phFg: "#6a7894" },
 ];
 
 type FontSet = {
@@ -57,8 +70,9 @@ const PALETTE_KEY = "pm_palette";
 const FONT_KEY = "pm_fonts";
 
 const COLOR_PROPS = [
-  "--pm-bg", "--pm-surface", "--pm-fg", "--pm-muted", "--pm-accent",
-  "--pm-accent-dark", "--pm-ph-a", "--pm-ph-b", "--pm-ph-fg",
+  "--pm-bg", "--pm-surface", "--pm-surface-2", "--pm-border", "--pm-fg",
+  "--pm-muted", "--pm-accent", "--pm-accent-dark", "--pm-on-accent",
+  "--pm-ph-a", "--pm-ph-b", "--pm-ph-fg",
   "--pm-cream", "--pm-ivory", "--pm-sage", "--pm-sage-dark",
   "--pm-gold", "--pm-gold-dark", "--pm-brown",
 ];
@@ -78,10 +92,13 @@ function applyPalette(p: Palette | null) {
   const set = (k: string, v: string) => el.style.setProperty(k, v);
   set("--pm-bg", p.bg);
   set("--pm-surface", p.surface);
+  set("--pm-surface-2", p.surface2);
+  set("--pm-border", p.border);
   set("--pm-fg", p.text);
   set("--pm-muted", p.muted);
   set("--pm-accent", p.accent);
   set("--pm-accent-dark", p.accentDark);
+  set("--pm-on-accent", p.onAccent);
   set("--pm-ph-a", p.phA);
   set("--pm-ph-b", p.phB);
   set("--pm-ph-fg", p.phFg);
@@ -112,7 +129,6 @@ export function ThemeLab() {
   const [palette, setPalette] = useState<string>("default");
   const [font, setFont] = useState<string>("default");
 
-  // Restaurar selección guardada al montar (también tras cambiar de vista).
   useEffect(() => {
     const sp = localStorage.getItem(PALETTE_KEY) ?? "default";
     const sf = localStorage.getItem(FONT_KEY) ?? "default";
@@ -135,14 +151,13 @@ export function ThemeLab() {
 
   return (
     <div className="fixed left-3 top-20 z-[55] sm:left-4 sm:top-24">
-      {/* Lanzador */}
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-label="Personalizar tema"
-        className="flex items-center gap-2 rounded-2xl bg-white/90 px-3.5 py-2.5 text-sm font-semibold text-[color:var(--pm-fg)] shadow-lg ring-1 ring-black/10 backdrop-blur transition-transform hover:-translate-y-0.5"
+        className="flex items-center gap-2 rounded-2xl bg-white/90 px-3.5 py-2.5 text-sm font-semibold text-zinc-800 shadow-lg ring-1 ring-zinc-900/10 backdrop-blur transition-transform hover:-translate-y-0.5"
       >
-        <Palette className="size-4 text-[color:var(--pm-accent-dark)]" />
+        <Palette className="size-4 text-zinc-600" />
         Tema
       </button>
 
@@ -153,24 +168,21 @@ export function ThemeLab() {
             animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: -12, scale: 0.98 }}
             transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-3 max-h-[72vh] w-64 overflow-y-auto rounded-2xl bg-white/95 p-4 shadow-2xl ring-1 ring-black/10 backdrop-blur"
+            className="mt-3 max-h-[72vh] w-64 overflow-y-auto rounded-2xl bg-white/95 p-4 text-zinc-800 shadow-2xl ring-1 ring-zinc-900/10 backdrop-blur"
           >
             <div className="mb-3 flex items-center justify-between">
-              <span className="font-poppins text-sm font-bold text-[color:var(--pm-fg)]">
-                Personalizar
-              </span>
+              <span className="text-sm font-bold text-zinc-900">Personalizar</span>
               <button
                 type="button"
                 onClick={() => setOpen(false)}
                 aria-label="Cerrar"
-                className="grid size-7 place-items-center rounded-full bg-black/5 hover:bg-black/10"
+                className="grid size-7 place-items-center rounded-full bg-zinc-100 hover:bg-zinc-200"
               >
-                <X className="size-4 text-[color:var(--pm-fg)]" />
+                <X className="size-4 text-zinc-700" />
               </button>
             </div>
 
-            {/* Paletas */}
-            <div className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-[color:var(--pm-muted)]">
+            <div className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-zinc-400">
               <Palette className="size-3.5" /> Paleta de colores
             </div>
             <div className="grid grid-cols-2 gap-2">
@@ -191,8 +203,7 @@ export function ThemeLab() {
               ))}
             </div>
 
-            {/* Fuentes */}
-            <div className="mb-2 mt-5 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-[color:var(--pm-muted)]">
+            <div className="mb-2 mt-5 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-zinc-400">
               <Type className="size-3.5" /> Tipografía
             </div>
             <div className="flex flex-col gap-1.5">
@@ -213,7 +224,7 @@ export function ThemeLab() {
               ))}
             </div>
 
-            <p className="mt-4 text-[0.7rem] leading-snug text-[color:var(--pm-muted)]">
+            <p className="mt-4 text-[0.7rem] leading-snug text-zinc-500">
               Panel de demo: prueba combinaciones de color y fuente. La selección
               se guarda en este navegador.
             </p>
@@ -241,21 +252,21 @@ function PaletteChip({
       onClick={onClick}
       className={cn(
         "relative flex flex-col gap-1.5 rounded-xl border p-2 text-left transition-all hover:-translate-y-0.5",
-        active ? "border-[color:var(--pm-accent-dark)] ring-2 ring-[color:var(--pm-accent-dark)]/30" : "border-black/10",
+        active ? "border-zinc-900 ring-2 ring-zinc-900/20" : "border-zinc-200",
       )}
     >
       <div className="flex gap-1">
         {colors.map((c, i) => (
           <span
             key={i}
-            className="size-5 rounded-md ring-1 ring-black/10"
+            className="size-5 rounded-md ring-1 ring-zinc-900/10"
             style={{ background: c }}
           />
         ))}
       </div>
-      <span className="text-xs font-medium text-[color:var(--pm-fg)]">{label}</span>
+      <span className="text-xs font-medium text-zinc-700">{label}</span>
       {active ? (
-        <Check className="absolute right-1.5 top-1.5 size-3.5 text-[color:var(--pm-accent-dark)]" />
+        <Check className="absolute right-1.5 top-1.5 size-3.5 text-zinc-900" />
       ) : null}
     </button>
   );
@@ -278,14 +289,14 @@ function FontRow({
       onClick={onClick}
       className={cn(
         "flex items-center justify-between rounded-xl border px-3 py-2 text-left transition-colors",
-        active ? "border-[color:var(--pm-accent-dark)] bg-[color:var(--pm-accent)]/10" : "border-black/10 hover:bg-black/5",
+        active ? "border-zinc-900 bg-zinc-100" : "border-zinc-200 hover:bg-zinc-50",
       )}
     >
       <span>
-        <span className="block text-sm font-semibold text-[color:var(--pm-fg)]">{name}</span>
-        <span className="block text-[0.7rem] text-[color:var(--pm-muted)]">{sample}</span>
+        <span className="block text-sm font-semibold text-zinc-800">{name}</span>
+        <span className="block text-[0.7rem] text-zinc-500">{sample}</span>
       </span>
-      {active ? <Check className="size-4 text-[color:var(--pm-accent-dark)]" /> : null}
+      {active ? <Check className="size-4 text-zinc-900" /> : null}
     </button>
   );
 }

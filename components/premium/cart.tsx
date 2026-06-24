@@ -104,7 +104,7 @@ export function PremiumCart() {
                 type="button"
                 onClick={() => setCartOpen(false)}
                 aria-label="Cerrar"
-                className="grid size-10 place-items-center rounded-full bg-white shadow-sm transition-transform hover:rotate-90"
+                className="grid size-10 place-items-center rounded-full bg-[color:var(--pm-surface)] shadow-sm transition-transform hover:rotate-90"
               >
                 <X className="size-5 text-[color:var(--pm-fg)]" />
               </button>
@@ -124,7 +124,7 @@ export function PremiumCart() {
                 lines.map((l) => (
                   <div
                     key={l.id}
-                    className="flex gap-3 rounded-2xl bg-white p-3 shadow-sm"
+                    className="flex gap-3 rounded-2xl bg-[color:var(--pm-surface)] p-3 shadow-sm"
                   >
                     <div className="pm-ph size-16 flex-none rounded-xl" />
                     <div className="min-w-0 flex-1">
@@ -135,12 +135,12 @@ export function PremiumCart() {
                         {CLP(l.precio)}
                       </span>
                       <div className="mt-1.5 flex items-center justify-between">
-                        <div className="flex items-center gap-1 rounded-full bg-black/5 p-1">
+                        <div className="flex items-center gap-1 rounded-full bg-[color:var(--pm-surface-2)] p-1">
                           <button
                             type="button"
                             onClick={() => dec(l.id)}
                             aria-label="Restar"
-                            className="grid size-6 place-items-center rounded-full text-[color:var(--pm-fg)] hover:bg-white"
+                            className="grid size-6 place-items-center rounded-full text-[color:var(--pm-fg)] hover:bg-[color:var(--pm-surface)]"
                           >
                             <Minus className="size-3.5" />
                           </button>
@@ -151,7 +151,7 @@ export function PremiumCart() {
                             type="button"
                             onClick={() => inc(l.id)}
                             aria-label="Sumar"
-                            className="grid size-6 place-items-center rounded-full text-[color:var(--pm-fg)] hover:bg-white"
+                            className="grid size-6 place-items-center rounded-full text-[color:var(--pm-fg)] hover:bg-[color:var(--pm-surface)]"
                           >
                             <Plus className="size-3.5" />
                           </button>
@@ -176,20 +176,20 @@ export function PremiumCart() {
                     value={nombre}
                     onChange={(e) => setNombre(e.target.value)}
                     placeholder="Tu nombre"
-                    className="w-full rounded-xl border border-black/10 bg-white px-4 py-2.5 text-sm outline-none focus:border-[color:var(--pm-accent)]"
+                    className="w-full rounded-xl border border-[color:var(--pm-border)] bg-[color:var(--pm-surface)] px-4 py-2.5 text-sm outline-none focus:border-[color:var(--pm-accent)]"
                   />
                   <input
                     value={direccion}
                     onChange={(e) => setDireccion(e.target.value)}
                     placeholder="Dirección (o retiro en local)"
-                    className="w-full rounded-xl border border-black/10 bg-white px-4 py-2.5 text-sm outline-none focus:border-[color:var(--pm-accent)]"
+                    className="w-full rounded-xl border border-[color:var(--pm-border)] bg-[color:var(--pm-surface)] px-4 py-2.5 text-sm outline-none focus:border-[color:var(--pm-accent)]"
                   />
                   <textarea
                     value={obs}
                     onChange={(e) => setObs(e.target.value)}
                     placeholder="Observaciones (opcional)"
                     rows={2}
-                    className="w-full resize-none rounded-xl border border-black/10 bg-white px-4 py-2.5 text-sm outline-none focus:border-[color:var(--pm-accent)]"
+                    className="w-full resize-none rounded-xl border border-[color:var(--pm-border)] bg-[color:var(--pm-surface)] px-4 py-2.5 text-sm outline-none focus:border-[color:var(--pm-accent)]"
                   />
                   <button
                     type="button"
@@ -202,7 +202,7 @@ export function PremiumCart() {
               ) : null}
             </div>
 
-            <div className="border-t border-black/5 bg-white p-6 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
+            <div className="border-t border-[color:var(--pm-border)] bg-[color:var(--pm-surface)] p-6 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
               <div className="mb-1 flex items-center justify-between text-sm text-[color:var(--pm-muted)]">
                 <span>Subtotal ({count})</span>
                 <span>{CLP(total)}</span>
