@@ -92,6 +92,11 @@ header.scrolled{background:rgba(248,245,240,.85);backdrop-filter:blur(14px);box-
 .nav-links a:hover{color:var(--sage-dark)}
 .nav-links a:hover::after{width:100%}
 .nav-actions{display:flex;align-items:center;gap:14px}
+.switch-btn{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 18px;border-radius:14px;
+  background:var(--brown);color:#fff;font-family:'Poppins';font-weight:600;font-size:.9rem;
+  box-shadow:var(--shadow-sm);transition:var(--t)}
+.switch-btn svg{width:18px;height:18px}
+.switch-btn:hover{background:var(--sage-dark);transform:translateY(-2px);box-shadow:var(--shadow-md)}
 .cart-btn{position:relative;width:48px;height:48px;border-radius:14px;background:#fff;
   display:grid;place-items:center;box-shadow:var(--shadow-sm);transition:var(--t)}
 .cart-btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
@@ -303,6 +308,8 @@ footer{background:var(--brown);color:#e9e2d8;padding:64px 0 28px}
   .hero-trust{gap:20px}
   .prod-actions{flex-direction:column;align-items:stretch}
   .add-btn{width:100%}
+  .switch-btn{padding:0 12px}
+  .switch-btn span{display:none}
 }
 @media(max-width:420px){
   .prod-grid,.ben-grid{grid-template-columns:1fr}
@@ -315,7 +322,7 @@ footer{background:var(--brown);color:#e9e2d8;padding:64px 0 28px}
 <header id="header">
   <div class="wrap nav">
     <a class="brand" href="#inicio">
-      <img src="imagenes/logo/Antumalen_logo.png" alt="Antümalen Pets" onerror="this.style.display='none'">
+      <img src="logo/Antumalen_logo.png" alt="Antümalen Pets" onerror="this.style.display='none'">
       <span class="brand-name">Antümalen <em>Pets</em></span>
     </a>
     <nav class="nav-links" id="navLinks">
@@ -325,6 +332,10 @@ footer{background:var(--brown);color:#e9e2d8;padding:64px 0 28px}
       <a href="#faq">Preguntas</a>
     </nav>
     <div class="nav-actions">
+      <a href="restaurante-premium.html" class="switch-btn" aria-label="Ir al restaurante">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2a2 2 0 0 0 2-2V2M5 2v20M21 15V2a5 5 0 0 0-3 5v6c0 1.1.9 2 2 2h1zm0 0v7"/></svg>
+        <span>Restaurante</span>
+      </a>
       <button class="cart-btn" onclick="openCart()" aria-label="Abrir carrito">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
         <span class="cart-count" id="cartCount">0</span>
@@ -514,7 +525,7 @@ footer{background:var(--brown);color:#e9e2d8;padding:64px 0 28px}
   <div class="wrap foot-grid">
     <div class="foot-col">
       <div class="foot-brand">
-        <img src="imagenes/logo/Antumalen_logo.png" alt="" onerror="this.style.display='none'">
+        <img src="logo/Antumalen_logo.png" alt="" onerror="this.style.display='none'">
         <b>Antümalen Pets</b>
       </div>
       <p>Tienda de mascotas en San Clemente, Región del Maule. Alimentos, accesorios y todo para el bienestar de tu mejor amigo.</p>
