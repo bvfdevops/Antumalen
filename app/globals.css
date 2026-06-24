@@ -1,0 +1,165 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================
+   Antümalen — Design tokens
+   Marca: amarillo dorado + azul petróleo (mapudungun "niña del sol")
+   ============================================================ */
+
+:root {
+  --radius: 0.875rem;
+
+  --background: oklch(0.99 0.006 95);
+  --foreground: oklch(0.21 0.03 232);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.21 0.03 232);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.21 0.03 232);
+
+  /* Azul petróleo de marca */
+  --primary: oklch(0.44 0.06 215);
+  --primary-foreground: oklch(0.99 0.01 95);
+
+  /* Amarillo dorado de marca */
+  --accent: oklch(0.84 0.16 88);
+  --accent-foreground: oklch(0.28 0.05 70);
+
+  --secondary: oklch(0.96 0.01 215);
+  --secondary-foreground: oklch(0.3 0.04 232);
+
+  --muted: oklch(0.96 0.008 230);
+  --muted-foreground: oklch(0.52 0.02 232);
+
+  --destructive: oklch(0.58 0.21 27);
+  --destructive-foreground: oklch(0.99 0.01 95);
+
+  --border: oklch(0.91 0.01 230);
+  --input: oklch(0.91 0.01 230);
+  --ring: oklch(0.44 0.06 215);
+
+  --whatsapp: oklch(0.72 0.18 152);
+
+  /* Acento dinámico por modo (lo sobreescribe el wrapper) */
+  --brand: var(--primary);
+  --brand-soft: oklch(0.95 0.03 215);
+}
+
+.dark {
+  --background: oklch(0.18 0.02 232);
+  --foreground: oklch(0.95 0.01 95);
+
+  --card: oklch(0.22 0.025 232);
+  --card-foreground: oklch(0.95 0.01 95);
+
+  --popover: oklch(0.22 0.025 232);
+  --popover-foreground: oklch(0.95 0.01 95);
+
+  --primary: oklch(0.68 0.07 200);
+  --primary-foreground: oklch(0.18 0.02 232);
+
+  --accent: oklch(0.84 0.16 88);
+  --accent-foreground: oklch(0.24 0.04 70);
+
+  --secondary: oklch(0.27 0.03 232);
+  --secondary-foreground: oklch(0.95 0.01 95);
+
+  --muted: oklch(0.27 0.025 232);
+  --muted-foreground: oklch(0.68 0.02 232);
+
+  --destructive: oklch(0.65 0.2 27);
+  --destructive-foreground: oklch(0.99 0.01 95);
+
+  --border: oklch(0.32 0.02 232 / 60%);
+  --input: oklch(0.32 0.02 232 / 70%);
+  --ring: oklch(0.68 0.07 200);
+
+  --whatsapp: oklch(0.72 0.18 152);
+
+  --brand: var(--primary);
+  --brand-soft: oklch(0.27 0.04 215);
+}
+
+/* Acento por modo: tienda (azul petróleo) vs restaurante (terracota) */
+[data-mode="tienda"] {
+  --brand: oklch(0.44 0.06 215);
+  --brand-soft: oklch(0.95 0.03 215);
+}
+.dark [data-mode="tienda"] {
+  --brand: oklch(0.68 0.07 200);
+  --brand-soft: oklch(0.27 0.04 215);
+}
+[data-mode="restaurante"] {
+  --brand: oklch(0.52 0.16 35);
+  --brand-soft: oklch(0.95 0.04 60);
+}
+.dark [data-mode="restaurante"] {
+  --brand: oklch(0.68 0.15 45);
+  --brand-soft: oklch(0.3 0.06 45);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-whatsapp: var(--whatsapp);
+
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-hand: var(--font-caveat), cursive;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 14px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/40;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+    text-wrap: balance;
+  }
+  ::selection {
+    background: var(--brand);
+    color: var(--primary-foreground);
+  }
+}
+
+@layer utilities {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
