@@ -163,3 +163,85 @@
     text-wrap: balance;
   }
 }
+
+/* ============================================================
+   PREMIUM (tercera opción) — landing Mascotas + Restaurante
+   Vistas separadas, placeholders skeleton + shimmer, fuentes
+   Playfair / Poppins / Inter. Aislado del resto del sitio.
+   ============================================================ */
+.premium {
+  --pm-cream: #f8f5f0;
+  --pm-sage: #7bae7f;
+  --pm-sage-dark: #5f9163;
+  --pm-brown: #5c4b3b;
+  --pm-ink: #111827;
+  --pm-muted: #6b7280;
+  --pm-wa: #25d366;
+  --pm-wa-dark: #1da851;
+  --pm-accent: var(--pm-sage);
+  --pm-accent-dark: var(--pm-sage-dark);
+  --pm-bg: var(--pm-cream);
+  --pm-surface: #ffffff;
+  --pm-fg: var(--pm-ink);
+  --pm-ph-a: #ece6dc;
+  --pm-ph-b: #ddd3c4;
+  --pm-ph-fg: #b3a48f;
+
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  color: var(--pm-fg);
+  background: var(--pm-bg);
+}
+.premium[data-view="restaurante"] {
+  --pm-carbon: #121212;
+  --pm-ivory: #fafafa;
+  --pm-gold: #c9a86a;
+  --pm-gold-dark: #b08f50;
+  --pm-accent: var(--pm-gold);
+  --pm-accent-dark: var(--pm-gold-dark);
+  --pm-bg: var(--pm-ivory);
+  --pm-surface: #ffffff;
+  --pm-fg: var(--pm-carbon);
+  --pm-ph-a: #e7e7e7;
+  --pm-ph-b: #d6d6d6;
+  --pm-ph-fg: #a6a6a6;
+}
+.premium .font-display { font-family: var(--font-playfair), Georgia, serif; }
+.premium .font-poppins { font-family: var(--font-poppins), ui-sans-serif, sans-serif; }
+
+.pm-ph {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--pm-ph-a) 0%, var(--pm-ph-b) 100%);
+}
+.pm-ph::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 70%
+  );
+  background-size: 220% 100%;
+  animation: pm-shimmer 2.2s infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pm-ph::after { animation: none; }
+}
+@keyframes pm-shimmer {
+  0% { background-position: 130% 0; }
+  100% { background-position: -130% 0; }
+}
+
+.pm-wa-float {
+  animation: pm-pulse 2.4s infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pm-wa-float { animation: none; }
+}
+@keyframes pm-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45); }
+  70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}

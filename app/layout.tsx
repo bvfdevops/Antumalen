@@ -3,10 +3,7 @@ import { Caveat, Fraunces, Nunito_Sans } from "next/font/google";
 import { Toaster } from "sonner";
 import { StoreProvider } from "@/components/store-provider";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Header } from "@/components/site/header";
-import { Footer } from "@/components/site/footer";
-import { CartDrawer } from "@/components/site/cart-drawer";
-import { WhatsappFloat } from "@/components/site/whatsapp-float";
+import { GlobalChrome, GlobalHeader } from "@/components/site/global-chrome";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -56,11 +53,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <StoreProvider>
-            <Header />
+            <GlobalHeader />
             {children}
-            <Footer />
-            <CartDrawer />
-            <WhatsappFloat />
+            <GlobalChrome />
             <Toaster position="bottom-center" richColors />
           </StoreProvider>
         </ThemeProvider>
