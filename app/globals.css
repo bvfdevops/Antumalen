@@ -191,7 +191,12 @@
   --pm-ph-b: #ddd3c4;
   --pm-ph-fg: #b3a48f;
 
-  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  /* Fuentes con indirección (el panel de temas las puede cambiar) */
+  --pm-font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --pm-font-display: var(--font-playfair), Georgia, serif;
+  --pm-font-ui: var(--font-poppins), ui-sans-serif, sans-serif;
+
+  font-family: var(--pm-font-body);
   color: var(--pm-fg);
   background: var(--pm-bg);
 }
@@ -209,8 +214,8 @@
   --pm-ph-b: #ddd4c4;
   --pm-ph-fg: #b3a48f;
 }
-.premium .font-display { font-family: var(--font-playfair), Georgia, serif; }
-.premium .font-poppins { font-family: var(--font-poppins), ui-sans-serif, sans-serif; }
+.premium .font-display { font-family: var(--pm-font-display); }
+.premium .font-poppins { font-family: var(--pm-font-ui); }
 
 .pm-ph {
   position: relative;

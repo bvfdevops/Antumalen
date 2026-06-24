@@ -31,6 +31,7 @@ import {
   Stars,
 } from "./primitives";
 import { ProductCard } from "./product-card";
+import { ThemeLab } from "./theme-lab";
 import { PremiumWhatsappFloat } from "./whatsapp-float";
 
 const WA = "56950306560";
@@ -79,6 +80,7 @@ export function PetsView() {
   return (
     <div className="premium" data-view="mascotas">
       <Navbar view="mascotas" />
+      <ThemeLab />
       <PremiumCart />
       <PremiumWhatsappFloat view="mascotas" />
 

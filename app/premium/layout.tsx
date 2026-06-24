@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Poppins } from "next/font/google";
+import { Inter, Lora, Montserrat, Playfair_Display, Poppins } from "next/font/google";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -20,6 +20,18 @@ const inter = Inter({
   display: "swap",
 });
 
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
+
+const lora = Lora({
+  subsets: ["latin"],
+  variable: "--font-lora",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Antümalen — Mascotas y Restaurante | San Clemente",
   description:
@@ -32,7 +44,9 @@ export default function PremiumLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className={`${playfair.variable} ${poppins.variable} ${inter.variable}`}>
+    <div
+      className={`${playfair.variable} ${poppins.variable} ${inter.variable} ${montserrat.variable} ${lora.variable}`}
+    >
       {children}
     </div>
   );

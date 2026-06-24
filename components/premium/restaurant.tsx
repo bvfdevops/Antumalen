@@ -25,6 +25,7 @@ import {
   Stars,
 } from "./primitives";
 import { ProductCard } from "./product-card";
+import { ThemeLab } from "./theme-lab";
 import { PremiumWhatsappFloat } from "./whatsapp-float";
 
 const WA = "56950306560";
@@ -77,6 +78,7 @@ export function RestaurantView() {
   return (
     <div className="premium" data-view="restaurante">
       <Navbar view="restaurante" />
+      <ThemeLab />
       <PremiumCart />
       <PremiumWhatsappFloat view="restaurante" />
 
