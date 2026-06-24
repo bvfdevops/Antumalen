@@ -202,7 +202,10 @@ export function RestaurantView() {
         </section>
 
         {/* ---------- ESPECIALIDADES ---------- */}
-        <section className="bg-[color:var(--pm-carbon)] px-5 py-20 text-white sm:px-8">
+        <section
+          id="especialidades"
+          className="bg-[color:var(--pm-carbon)] px-5 py-20 text-white sm:px-8"
+        >
           <div className="mx-auto w-full max-w-7xl">
             <SectionHead
               eyebrow="Hechas con dedicación"
@@ -311,20 +314,13 @@ export function RestaurantView() {
         <section className="px-5 pb-24 pt-4 sm:px-8">
           <Reveal
             kind="scale"
-            className="relative mx-auto w-full max-w-7xl overflow-hidden rounded-[2rem] px-8 py-16 text-center text-white sm:py-20"
+            className="mx-auto w-full max-w-7xl overflow-hidden rounded-[2rem] bg-gradient-to-br from-white to-[color:var(--pm-gold)]/25 px-8 py-16 text-center shadow-[0_24px_70px_rgba(140,109,53,0.16)] ring-1 ring-[color:var(--pm-gold)]/40 sm:py-20"
           >
-            <div
-              className="absolute inset-0 -z-10"
-              style={{
-                background:
-                  "radial-gradient(120% 120% at 80% 0%, rgba(201,168,106,0.25), transparent 50%), linear-gradient(135deg, #1a1714, #121212)",
-              }}
-            />
-            <Wine className="mx-auto mb-4 size-10 text-[color:var(--pm-gold)]" strokeWidth={1.4} />
-            <h2 className="font-display text-3xl font-bold sm:text-4xl">
+            <Wine className="mx-auto mb-4 size-10 text-[color:var(--pm-gold-dark)]" strokeWidth={1.4} />
+            <h2 className="font-display text-3xl font-bold text-[color:var(--pm-carbon)] sm:text-4xl">
               ¿Listo para disfrutar?
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-white/75">
+            <p className="mx-auto mt-4 max-w-xl text-[color:var(--pm-muted)]">
               Arma tu pedido y coordina por WhatsApp para retirar, comer en el
               local o recibir en casa.
             </p>

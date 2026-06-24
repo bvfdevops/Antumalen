@@ -5,24 +5,32 @@ import { Menu, ShoppingBag, UtensilsCrossed, X } from "lucide-react";
 import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useStore } from "@/components/store-provider";
 import { cn } from "@/lib/utils";
 
-/** Castea a Route para que <Link> acepte anclas y rutas dinámicas. */
+/** Castea a Route para que <Link> acepte rutas dinámicas. */
 const r = (s: string) => s as Route;
 
-const LINKS = [
-  { href: "/premium#inicio", label: "Inicio" },
-  { href: "/premium", label: "Mascotas" },
-  { href: "/premium/restaurante", label: "Restaurante" },
-  { href: "/premium#nosotros", label: "Nosotros" },
-  { href: "/premium#contacto", label: "Contacto" },
-];
+/** Enlaces propios de cada vista: solo secciones de la página actual. */
+const NAV: Record<"mascotas" | "restaurante", { href: string; label: string }[]> = {
+  mascotas: [
+    { href: "#inicio", label: "Inicio" },
+    { href: "#categorias", label: "Categorías" },
+    { href: "#productos", label: "Productos" },
+    { href: "#nosotros", label: "Nosotros" },
+    { href: "#contacto", label: "Contacto" },
+  ],
+  restaurante: [
+    { href: "#inicio", label: "Inicio" },
+    { href: "#menu", label: "Menú" },
+    { href: "#especialidades", label: "Especialidades" },
+    { href: "#galeria", label: "Galería" },
+    { href: "#contacto", label: "Contacto" },
+  ],
+};
 
 export function Navbar({ view }: { view: "mascotas" | "restaurante" }) {
-  const pathname = usePathname();
   const { count, setCartOpen } = useStore();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -86,32 +94,22 @@ export function Navbar({ view }: { view: "mascotas" | "restaurante" }) {
             </span>
           </Link>
 
-          {/* Links desktop */}
+          {/* Links desktop (propios de esta vista) */}
           <div className="hidden items-center gap-1 lg:flex">
-            {LINKS.map((l) => {
-              const active =
-                (l.label === "Mascotas" && pathname === "/premium") ||
-                (l.label === "Restaurante" &&
-                  pathname.startsWith("/premium/restaurante"));
-              return (
-                <Link
-                  key={l.label}
-                  href={r(l.href)}
-                  className={cn(
-                    "rounded-full px-4 py-2 text-sm font-medium transition-colors",
-                    active
-                      ? lightOnTop
-                        ? "bg-white/20 text-white"
-                        : "bg-[color:var(--pm-accent)]/20 text-[color:var(--pm-accent-dark)]"
-                      : lightOnTop
-                        ? "text-white/90 hover:bg-white/10"
-                        : "text-[color:var(--pm-fg)] hover:bg-black/5",
-                  )}
-                >
-                  {l.label}
-                </Link>
-              );
-            })}
+            {NAV[view].map((l) => (
+              <a
+                key={l.label}
+                href={l.href}
+                className={cn(
+                  "rounded-full px-4 py-2 text-sm font-medium transition-colors",
+                  lightOnTop
+                    ? "text-white/90 hover:bg-white/10 hover:text-white"
+                    : "text-[color:var(--pm-fg)] hover:bg-black/5",
+                )}
+              >
+                {l.label}
+              </a>
+            ))}
           </div>
 
           {/* Acciones */}
@@ -196,15 +194,15 @@ export function Navbar({ view }: { view: "mascotas" | "restaurante" }) {
                 </button>
               </div>
               <nav className="flex flex-col gap-1">
-                {LINKS.map((l) => (
-                  <Link
+                {NAV[view].map((l) => (
+                  <a
                     key={l.label}
-                    href={r(l.href)}
+                    href={l.href}
                     onClick={() => setOpen(false)}
                     className="rounded-2xl px-4 py-3.5 text-base font-medium text-[color:var(--pm-fg)] transition-colors hover:bg-black/5"
                   >
                     {l.label}
-                  </Link>
+                  </a>
                 ))}
               </nav>
               <Link

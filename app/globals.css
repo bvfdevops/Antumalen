@@ -140,6 +140,10 @@
   * {
     @apply border-border outline-ring/40;
   }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-synthesis-weight: none;
@@ -192,18 +196,18 @@
   background: var(--pm-bg);
 }
 .premium[data-view="restaurante"] {
-  --pm-carbon: #121212;
-  --pm-ivory: #fafafa;
+  --pm-carbon: #1c1814;
+  --pm-ivory: #f6f1e8; /* crema cálida (fondo) */
   --pm-gold: #c9a86a;
-  --pm-gold-dark: #b08f50;
+  --pm-gold-dark: #8c6d35; /* más oscuro para texto legible sobre crema */
   --pm-accent: var(--pm-gold);
   --pm-accent-dark: var(--pm-gold-dark);
   --pm-bg: var(--pm-ivory);
   --pm-surface: #ffffff;
   --pm-fg: var(--pm-carbon);
-  --pm-ph-a: #e7e7e7;
-  --pm-ph-b: #d6d6d6;
-  --pm-ph-fg: #a6a6a6;
+  --pm-ph-a: #ece6da;
+  --pm-ph-b: #ddd4c4;
+  --pm-ph-fg: #b3a48f;
 }
 .premium .font-display { font-family: var(--font-playfair), Georgia, serif; }
 .premium .font-poppins { font-family: var(--font-poppins), ui-sans-serif, sans-serif; }

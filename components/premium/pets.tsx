@@ -154,7 +154,7 @@ export function PetsView() {
         </section>
 
         {/* ---------- CATEGORÍAS ---------- */}
-        <section className="px-5 py-20 sm:px-8">
+        <section id="categorias" className="px-5 py-20 sm:px-8">
           <div className="mx-auto w-full max-w-7xl">
             <SectionHead
               eyebrow="Explora por mascota"
