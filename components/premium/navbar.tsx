@@ -53,7 +53,9 @@ export function Navbar({ view }: { view: "mascotas" | "restaurante" }) {
           "transition-all duration-300",
           scrolled
             ? "border-b border-black/5 bg-[color:var(--pm-bg)]/80 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.06)]"
-            : "bg-transparent",
+            : lightOnTop
+              ? "bg-gradient-to-b from-black/40 via-black/15 to-transparent"
+              : "bg-transparent",
         )}
       >
         <nav className="mx-auto flex h-[68px] w-full max-w-7xl items-center justify-between px-5 sm:px-8">
@@ -65,13 +67,13 @@ export function Navbar({ view }: { view: "mascotas" | "restaurante" }) {
             <Image
               src={
                 isResto
-                  ? "/logo/Antumalen_restaurante_logo_nobg.png"
+                  ? "/logo/Antumalen_restaurante_Logo.jpg"
                   : "/logo/Antumalen_logo.png"
               }
               alt="Antümalen"
               width={44}
               height={44}
-              className="size-10 rounded-xl object-cover"
+              className="size-10 rounded-xl object-cover shadow-sm ring-1 ring-black/10"
               priority
             />
             <span
@@ -97,11 +99,13 @@ export function Navbar({ view }: { view: "mascotas" | "restaurante" }) {
                   href={r(l.href)}
                   className={cn(
                     "rounded-full px-4 py-2 text-sm font-medium transition-colors",
-                    textColor,
                     active
-                      ? "bg-[color:var(--pm-accent)]/15 text-[color:var(--pm-accent-dark)]"
-                      : "hover:bg-black/5",
-                    lightOnTop && !active && "hover:bg-white/10",
+                      ? lightOnTop
+                        ? "bg-white/20 text-white"
+                        : "bg-[color:var(--pm-accent)]/20 text-[color:var(--pm-accent-dark)]"
+                      : lightOnTop
+                        ? "text-white/90 hover:bg-white/10"
+                        : "text-[color:var(--pm-fg)] hover:bg-black/5",
                   )}
                 >
                   {l.label}

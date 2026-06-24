@@ -38,13 +38,13 @@ export function PremiumFooter({ view }: { view: "mascotas" | "restaurante" }) {
             <Image
               src={
                 isResto
-                  ? "/logo/Antumalen_restaurante_logo_nobg.png"
+                  ? "/logo/Antumalen_restaurante_Logo.jpg"
                   : "/logo/Antumalen_logo.png"
               }
               alt="Antümalen"
               width={46}
               height={46}
-              className="size-11 rounded-xl object-cover"
+              className="size-11 rounded-xl object-cover ring-1 ring-white/10"
             />
             <b className="font-display text-xl text-white">Antümalen</b>
           </div>
