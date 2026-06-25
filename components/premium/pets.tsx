@@ -77,16 +77,6 @@ const U = (id: string, w = 600) =>
   `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
 const HERO_IMG = U("1583511655857-d19b40a7a54e", 900);
 const EDITORIAL_IMG = U("1601758228041-f3b2795255f1", 800);
-const PRODUCT_IMG: Record<string, string> = {
-  "proplan-adult-15kg": U("1589924691995-400dc9ecc119"),
-  "proplan-puppy-15kg": U("1601758228041-f3b2795255f1"),
-  "cama-perro-m": U("1591946614720-90a587da4a36"),
-  "juguete-mordedor": U("1576201836106-db1758fd1c97"),
-  "proplan-gato-3kg": U("1514888286974-6c03e2ca1dba"),
-  "arena-gato-10l": U("1573865526739-10659fec78a5"),
-  "rascador-torre": U("1545249390-6bdfa286032f"),
-  "alimento-aves-1kg": U("1452570053594-1b985d6ea890"),
-};
 const AVATARS = [
   U("1561037404-61cd46aa615b", 120),
   U("1574158622682-e40e69881006", 120),
@@ -219,7 +209,7 @@ export function PetsView() {
             <Stagger className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {featured.map((p, i) => (
                 <StaggerItem key={p.id} className="h-full">
-                  <ProductCard producto={p} badge={BADGES[i]} phLabel="Producto" icon={PawPrint} image={PRODUCT_IMG[p.id]} />
+                  <ProductCard producto={p} badge={BADGES[i]} phLabel="Producto" icon={PawPrint} image={p.imagen} />
                 </StaggerItem>
               ))}
             </Stagger>

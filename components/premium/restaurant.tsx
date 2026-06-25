@@ -47,14 +47,6 @@ const U = (id: string, w = 600) =>
   `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
 const HERO_IMG = U("1504674900247-0877df9cc836", 800);
 const AMBIENTE_IMG = U("1517248135467-4c7edcad34c4", 800);
-const MENU_IMG: Record<string, string> = {
-  completos: U("1599599810769-bcde5a160d32"),
-  sandwiches: U("1528735602780-2552fd46c7af"),
-  pizzas: U("1513104890138-7c749659a591"),
-  fajitas: U("1551504734-5ee1c4a1479b"),
-  menus: U("1546069901-ba9599a7e63c"),
-  bebidas: U("1437418747212-8d9709afab22"),
-};
 const AVATARS = [
   U("1507003211169-0a1dd7228f2d", 120),
   U("1494790108377-be9c29b29330", 120),
@@ -219,7 +211,7 @@ export function RestaurantView() {
                     badge={BADGES[i]}
                     icon={ICON_BY_CAT[p.categoria] ?? UtensilsCrossed}
                     phLabel={p.categoria}
-                    image={MENU_IMG[p.categoria]}
+                    image={p.imagen}
                   />
                 </StaggerItem>
               ))}

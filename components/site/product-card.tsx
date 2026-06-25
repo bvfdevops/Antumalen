@@ -27,12 +27,25 @@ export function ProductCard({ producto }: { producto: Producto }) {
       transition={{ duration: 0.3, ease: "easeOut" }}
       className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-shadow hover:shadow-lg"
     >
-      <div className="relative flex h-40 items-center justify-center overflow-hidden bg-brand-soft">
-        <span className="absolute left-3 top-3 rounded-full bg-card/85 px-2.5 py-1 text-[11px] font-semibold capitalize text-muted-foreground backdrop-blur">
-          {producto.categoria}
-        </span>
-        <span className="font-display text-5xl font-semibold text-[var(--brand)]/35 transition-transform duration-300 group-hover:scale-110">
+      <div className="relative h-40 overflow-hidden bg-brand-soft">
+        <span className="absolute inset-0 grid place-items-center font-display text-5xl font-semibold text-[var(--brand)]/35">
           {producto.nombre.charAt(0)}
+        </span>
+        {producto.imagen ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={producto.imagen}
+            alt={producto.nombre}
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 size-full object-cover transition-transform duration-300 group-hover:scale-105"
+            onError={(e) => {
+              e.currentTarget.style.display = "none";
+            }}
+          />
+        ) : null}
+        <span className="absolute left-3 top-3 z-10 rounded-full bg-card/85 px-2.5 py-1 text-[11px] font-semibold capitalize text-muted-foreground backdrop-blur">
+          {producto.categoria}
         </span>
       </div>
 
