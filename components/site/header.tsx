@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Moon, PawPrint, ShoppingBag, Sun, UtensilsCrossed } from "lucide-react";
+import type { Route } from "next";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -44,7 +45,7 @@ export function Header() {
       )}
     >
       <div className="container-page flex h-16 items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-2.5">
+        <Link href={"/inicio" as string as Route} className="flex items-center gap-2.5">
           <span className="grid size-9 place-items-center rounded-xl bg-[var(--brand)] text-primary-foreground shadow-sm">
             {mode === "tienda" ? (
               <PawPrint className="size-5" />

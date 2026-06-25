@@ -98,7 +98,7 @@ export function PremiumFooter({ view }: { view: "mascotas" | "restaurante" }) {
               </Link>
             </li>
             <li>
-              <Link href={r("/")} className="hover:text-[color:var(--pm-accent)]">
+              <Link href={r("/inicio")} className="hover:text-[color:var(--pm-accent)]">
                 Sitio actual
               </Link>
             </li>

@@ -1,5 +1,9 @@
-import { Home } from "@/components/site/home";
+import type { Route } from "next";
+import { redirect } from "next/navigation";
 
+// La página principal es el "estudio" (muestra las 3 opciones).
+// El sitio tienda/restaurante vive en /inicio.
 export default function Page() {
-  return <Home />;
+  const target: string = "/estudio.html";
+  redirect(target as Route);
 }
