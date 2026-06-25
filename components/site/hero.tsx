@@ -2,43 +2,25 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, Truck } from "lucide-react";
-import { useStore } from "@/components/store-provider";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { buildWhatsappLink } from "@/lib/data";
 import { WhatsappIcon } from "@/components/site/icons";
 
-const COPY = {
-  tienda: {
-    badge: "Tienda de mascotas en San Clemente",
-    title: "Todo lo que tu mascota",
-    accent: "necesita",
-    tail: "en un solo lugar",
-    lead: "Alimentos, accesorios y mucho cariño para perros, gatos, aves, peces y roedores. Compra fácil y te lo llevamos hasta tu puerta.",
-    primary: { href: "#productos", label: "Comprar ahora" },
-    trust: [
-      { icon: Sparkles, label: "+2.000 familias felices" },
-      { icon: Truck, label: "Despacho a domicilio" },
-    ],
-  },
-  restaurante: {
-    badge: "Restaurante familiar en San Clemente",
-    title: "Comida",
-    accent: "casera",
-    tail: "y bien servida, como en casa",
-    lead: "Completos, sándwiches, pizzas, fajitas y menús del día. Para disfrutar en el local o pedir a domicilio.",
-    primary: { href: "#menu", label: "Ver el menú" },
-    trust: [
-      { icon: Sparkles, label: "Comida rica y casera" },
-      { icon: Truck, label: "Delivery y para llevar" },
-    ],
-  },
+const c = {
+  badge: "Tienda de mascotas en San Clemente",
+  title: "Todo lo que tu mascota",
+  accent: "necesita",
+  tail: "en un solo lugar",
+  lead: "Alimentos, accesorios y mucho cariño para perros, gatos, aves, peces y roedores. Compra fácil y te lo llevamos hasta tu puerta.",
+  primary: { href: "#productos", label: "Comprar ahora" },
+  trust: [
+    { icon: Sparkles, label: "+2.000 familias felices" },
+    { icon: Truck, label: "Despacho a domicilio" },
+  ],
 } as const;
 
 export function Hero() {
-  const { mode } = useStore();
-  const c = COPY[mode];
-
   return (
     <section
       id="inicio"
@@ -51,7 +33,6 @@ export function Hero() {
 
       <div className="container-page flex flex-col items-center py-20 text-center sm:py-28">
         <motion.div
-          key={mode}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
@@ -84,9 +65,7 @@ export function Hero() {
             <Button size="lg" variant="whatsapp" asChild>
               <a
                 href={buildWhatsappLink(
-                  mode === "restaurante"
-                    ? "Hola Antümalen, quiero hacer un pedido al restaurante."
-                    : "Hola Antümalen, quiero hacer un pedido en la tienda.",
+                  "Hola Antümalen, quiero hacer un pedido en la tienda.",
                 )}
                 target="_blank"
                 rel="noopener"

@@ -1,7 +1,6 @@
 "use client";
 
 import { Clock, MapPin, PawPrint } from "lucide-react";
-import { useStore } from "@/components/store-provider";
 import {
   FacebookIcon,
   InstagramIcon,
@@ -10,7 +9,6 @@ import {
 import { buildWhatsappLink } from "@/lib/data";
 
 export function Footer() {
-  const { setMode } = useStore();
   const year = new Date().getFullYear();
 
   return (
@@ -24,8 +22,8 @@ export function Footer() {
             <span className="font-display text-lg font-semibold">Antümalen</span>
           </div>
           <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-            Tienda de mascotas y restaurante de comida casera, en el mismo lugar
-            en San Clemente, Región del Maule.
+            Tienda de mascotas en San Clemente, Región del Maule. Alimentos,
+            accesorios y cariño para tu mejor amigo.
           </p>
           <div className="mt-5 flex gap-2">
             <a
@@ -51,23 +49,23 @@ export function Footer() {
 
         <nav className="flex flex-col gap-2.5 text-sm">
           <h4 className="font-display text-base font-semibold">Enlaces</h4>
-          <button
-            onClick={() => setMode("tienda")}
-            className="text-left text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Tienda de mascotas
-          </button>
-          <button
-            onClick={() => setMode("restaurante")}
-            className="text-left text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Restaurante
-          </button>
           <a
             href="#inicio"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Inicio
+          </a>
+          <a
+            href="#productos"
+            className="text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Productos
+          </a>
+          <a
+            href="#beneficios"
+            className="text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Beneficios
           </a>
           <a
             href="/estudio.html"
@@ -95,11 +93,11 @@ export function Footer() {
           </a>
           <span className="flex items-start gap-2 text-muted-foreground">
             <Clock className="mt-0.5 size-4 shrink-0" />
-            Tienda: Lun–Sáb 10–20 · Resto: Lun–Sáb 9:30–20:30
+            Lun–Sáb 10:00–20:00
           </span>
           <span className="flex items-start gap-2 text-muted-foreground">
             <MapPin className="mt-0.5 size-4 shrink-0" />
-            Ruta 115 #837 / Huamachuco #830, San Clemente
+            Ruta 115 #837, San Clemente
           </span>
         </div>
 
@@ -117,7 +115,7 @@ export function Footer() {
       <div className="border-t border-border">
         <div className="container-page flex flex-col items-center justify-between gap-2 py-5 text-xs text-muted-foreground sm:flex-row">
           <span>© {year} Antümalen. Todos los derechos reservados.</span>
-          <span>Tienda de mascotas y restaurante · San Clemente</span>
+          <span>Tienda de mascotas · San Clemente</span>
         </div>
       </div>
     </footer>

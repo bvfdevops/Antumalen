@@ -41,9 +41,9 @@ const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat
 const lora = Lora({ subsets: ["latin"], variable: "--font-lora", display: "swap", preload: false });
 
 export const metadata: Metadata = {
-  title: "Antümalen — Tienda de mascotas y Restaurante | San Clemente",
+  title: "Antümalen — Tienda de mascotas | San Clemente",
   description:
-    "Antümalen en San Clemente, Maule: tienda de mascotas (alimentos y accesorios) y restaurante de comida casera. Pide por WhatsApp con despacho a domicilio.",
+    "Antümalen en San Clemente, Maule: tienda de mascotas con alimentos y accesorios para perros, gatos, aves y más. Pide por WhatsApp con despacho a domicilio.",
   icons: { icon: "/logo/Antumalen_logo.png" },
 };
 

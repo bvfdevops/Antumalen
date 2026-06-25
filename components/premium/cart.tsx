@@ -22,7 +22,7 @@ function useIsMobile() {
 }
 
 export function PremiumCart() {
-  const { lines, total, count, inc, dec, remove, clear, cartOpen, setCartOpen, mode } =
+  const { lines, total, count, inc, dec, remove, clear, cartOpen, setCartOpen } =
     useStore();
   const isMobile = useIsMobile();
   const [nombre, setNombre] = useState("");
@@ -97,7 +97,7 @@ export function PremiumCart() {
                   Tu pedido
                 </h3>
                 <p className="text-xs text-[color:var(--pm-muted)]">
-                  {mode === "restaurante" ? "Antümalen Restaurante" : "Antümalen Mascotas"}
+                  Antümalen Mascotas
                 </p>
               </div>
               <button

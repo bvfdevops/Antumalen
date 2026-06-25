@@ -3,33 +3,20 @@
 import { Star } from "lucide-react";
 import { Reveal } from "@/components/site/reveal";
 import { SectionHead } from "@/components/site/section-head";
-import type { Mode } from "@/lib/data";
 
 type Testi = { quote: string; author: string; role: string; initials: string };
 
-const DATA: Record<Mode, { eyebrow: string; accent: string; items: Testi[] }> = {
-  tienda: {
-    eyebrow: "Testimonios",
-    accent: "nuestros clientes",
-    items: [
-      { quote: "Excelente atención y los precios son muy buenos. Me llegó todo rapidísimo a la casa.", author: "Carolina R.", role: "Dueña de Rocco", initials: "CR" },
-      { quote: "Siempre encuentro el alimento de mi gata. Muy amables al asesorarme por WhatsApp.", author: "Felipe M.", role: "Dueño de Luna", initials: "FM" },
-      { quote: "Una tienda local que se nota que ama a los animales. ¡Totalmente recomendados!", author: "Daniela P.", role: "Dueña de Copito", initials: "DP" },
-    ],
-  },
-  restaurante: {
-    eyebrow: "Opiniones",
-    accent: "en Google",
-    items: [
-      { quote: "Excelente lugar acogedor en San Clemente, precios bajos, rica comida y atención cordial.", author: "Manuel U.", role: "Local Guide", initials: "MU" },
-      { quote: "Muy buena atención y rica la comida, como si fuera de casa. Muy buenos sus completos.", author: "Francisco V.", role: "Cliente", initials: "FV" },
-      { quote: "Ricas fajitas, pizzas y sándwiches. Un momento agradable junto a la familia.", author: "Jaime M.", role: "Local Guide", initials: "JM" },
-    ],
-  },
+const c = {
+  eyebrow: "Testimonios",
+  accent: "nuestros clientes",
+  items: [
+    { quote: "Excelente atención y los precios son muy buenos. Me llegó todo rapidísimo a la casa.", author: "Carolina R.", role: "Dueña de Rocco", initials: "CR" },
+    { quote: "Siempre encuentro el alimento de mi gata. Muy amables al asesorarme por WhatsApp.", author: "Felipe M.", role: "Dueño de Luna", initials: "FM" },
+    { quote: "Una tienda local que se nota que ama a los animales. ¡Totalmente recomendados!", author: "Daniela P.", role: "Dueña de Copito", initials: "DP" },
+  ] as Testi[],
 };
 
-export function Testimonials({ mode }: { mode: Mode }) {
-  const c = DATA[mode];
+export function Testimonials() {
   return (
     <section id="testimonios" className="container-page py-20 sm:py-24">
       <SectionHead

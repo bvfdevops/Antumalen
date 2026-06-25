@@ -91,11 +91,11 @@ export function PetsView() {
 
   return (
     <div className="premium" data-view="mascotas">
-      <Navbar view="mascotas" />
+      <Navbar />
       <ThemeLab />
       <EstudioLink />
       <PremiumCart />
-      <PremiumWhatsappFloat view="mascotas" />
+      <PremiumWhatsappFloat />
 
       <main>
         {/* ---------- HERO ---------- */}
@@ -350,7 +350,7 @@ export function PetsView() {
         </section>
       </main>
 
-      <PremiumFooter view="mascotas" />
+      <PremiumFooter />
     </div>
   );
 }

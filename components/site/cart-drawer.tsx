@@ -10,19 +10,14 @@ import { buildWhatsappLink } from "@/lib/data";
 import { CLP } from "@/lib/utils";
 
 export function CartDrawer() {
-  const { mode, cartOpen, setCartOpen, lines, total, inc, dec, remove, clear } =
+  const { cartOpen, setCartOpen, lines, total, inc, dec, remove, clear } =
     useStore();
 
-  const esResto = mode === "restaurante";
   const waText =
     lines.length === 0
-      ? esResto
-        ? "Hola Antümalen, quiero hacer un pedido al restaurante."
-        : "Hola Antümalen, quiero hacer un pedido en la tienda."
+      ? "Hola Antümalen, quiero hacer un pedido en la tienda."
       : [
-          esResto
-            ? "¡Hola Antümalen! 🍽️ Quiero pedir del restaurante:"
-            : "¡Hola Antümalen! 🐾 Quiero pedir de la tienda:",
+          "¡Hola Antümalen! 🐾 Quiero pedir de la tienda:",
           "",
           ...lines.map(
             (i) => `• ${i.cantidad}x ${i.nombre} — ${CLP(i.precio * i.cantidad)}`,
@@ -35,10 +30,7 @@ export function CartDrawer() {
 
   return (
     <Sheet open={cartOpen} onOpenChange={setCartOpen}>
-      <SheetContent
-        title="Tu pedido"
-        description={esResto ? "Restaurante Antümalen" : "Tienda Antümalen"}
-      >
+      <SheetContent title="Tu pedido" description="Tienda Antümalen">
         <div className="flex-1 overflow-y-auto px-6 py-4">
           {lines.length === 0 ? (
             <div className="flex h-full flex-col items-center justify-center gap-3 py-16 text-center">
@@ -47,9 +39,7 @@ export function CartDrawer() {
               </span>
               <p className="font-medium">Tu carrito está vacío.</p>
               <p className="text-sm text-muted-foreground">
-                {esResto
-                  ? "Agrega platos del menú."
-                  : "Agrega productos del catálogo."}
+                Agrega productos del catálogo.
               </p>
             </div>
           ) : (

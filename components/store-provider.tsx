@@ -32,7 +32,7 @@ type StoreCtx = {
 
 const Ctx = createContext<StoreCtx | null>(null);
 
-const EMPTY: Carritos = { tienda: {}, restaurante: {} };
+const EMPTY: Carritos = { tienda: {} };
 const MODE_KEY = "antumalen_modo";
 const CART_KEY = "antumalen_carritos";
 
@@ -45,7 +45,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     try {
       const m = localStorage.getItem(MODE_KEY);
-      if (m === "tienda" || m === "restaurante") setModeState(m);
+      if (m === "tienda") setModeState(m);
       const c = localStorage.getItem(CART_KEY);
       if (c) setCarritos({ ...EMPTY, ...(JSON.parse(c) as Carritos) });
     } catch {

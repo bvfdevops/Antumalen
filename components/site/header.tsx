@@ -1,31 +1,22 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Moon, PawPrint, ShoppingBag, Sun, UtensilsCrossed } from "lucide-react";
+import { Moon, PawPrint, ShoppingBag, Sun } from "lucide-react";
 import type { Route } from "next";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useStore } from "@/components/store-provider";
-import type { Mode } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
-const NAV: Record<Mode, { href: string; label: string }[]> = {
-  tienda: [
-    { href: "#categorias", label: "Categorías" },
-    { href: "#productos", label: "Productos" },
-    { href: "#beneficios", label: "Beneficios" },
-    { href: "#contacto", label: "Contacto" },
-  ],
-  restaurante: [
-    { href: "#menu", label: "Menú" },
-    { href: "#info", label: "Información" },
-    { href: "#contacto", label: "Contacto" },
-  ],
-};
+const NAV = [
+  { href: "#categorias", label: "Categorías" },
+  { href: "#productos", label: "Productos" },
+  { href: "#beneficios", label: "Beneficios" },
+  { href: "#contacto", label: "Contacto" },
+];
 
 export function Header() {
-  const { mode, setMode, count, setCartOpen } = useStore();
+  const { count, setCartOpen } = useStore();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -47,22 +38,15 @@ export function Header() {
       <div className="container-page flex h-16 items-center justify-between gap-4">
         <Link href={"/inicio" as string as Route} className="flex items-center gap-2.5">
           <span className="grid size-9 place-items-center rounded-xl bg-[var(--brand)] text-primary-foreground shadow-sm">
-            {mode === "tienda" ? (
-              <PawPrint className="size-5" />
-            ) : (
-              <UtensilsCrossed className="size-5" />
-            )}
+            <PawPrint className="size-5" />
           </span>
           <span className="font-display text-lg font-semibold leading-none">
-            Antümalen{" "}
-            <span className="text-[var(--brand)]">
-              {mode === "tienda" ? "Pets" : "Resto"}
-            </span>
+            Antümalen <span className="text-[var(--brand)]">Pets</span>
           </span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
-          {NAV[mode].map((item) => (
+          {NAV.map((item) => (
             <a
               key={item.href}
               href={item.href}
@@ -74,7 +58,6 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <ModeSwitch mode={mode} onChange={setMode} />
           <ThemeToggle />
           <button
             onClick={() => setCartOpen(true)}
@@ -91,50 +74,6 @@ export function Header() {
         </div>
       </div>
     </header>
-  );
-}
-
-function ModeSwitch({
-  mode,
-  onChange,
-}: {
-  mode: Mode;
-  onChange: (m: Mode) => void;
-}) {
-  const options: { id: Mode; icon: typeof PawPrint; label: string }[] = [
-    { id: "tienda", icon: PawPrint, label: "Tienda de mascotas" },
-    { id: "restaurante", icon: UtensilsCrossed, label: "Restaurante" },
-  ];
-  return (
-    <div className="flex items-center rounded-full border border-border bg-card/60 p-1 backdrop-blur">
-      {options.map((o) => {
-        const Icon = o.icon;
-        const active = mode === o.id;
-        return (
-          <button
-            key={o.id}
-            onClick={() => onChange(o.id)}
-            aria-label={o.label}
-            title={o.label}
-            className="relative grid size-8 place-items-center rounded-full"
-          >
-            {active && (
-              <motion.span
-                layoutId="mode-switch"
-                className="absolute inset-0 rounded-full bg-[var(--brand)]"
-                transition={{ type: "spring", stiffness: 380, damping: 30 }}
-              />
-            )}
-            <Icon
-              className={cn(
-                "relative size-4",
-                active ? "text-primary-foreground" : "text-muted-foreground",
-              )}
-            />
-          </button>
-        );
-      })}
-    </div>
   );
 }
 

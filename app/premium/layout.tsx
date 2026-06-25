@@ -33,9 +33,9 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Antümalen — Mascotas y Restaurante | San Clemente",
+  title: "Antümalen — Tienda de mascotas premium | San Clemente",
   description:
-    "Ecosistema Antümalen: tienda de mascotas premium y restaurante de comida casera en San Clemente, Maule. Pide por WhatsApp.",
+    "Antümalen: tienda de mascotas premium en San Clemente, Maule. Alimentos, accesorios y cuidado para tu mejor amigo. Pide por WhatsApp.",
 };
 
 export default function PremiumLayout({

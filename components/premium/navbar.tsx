@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, PawPrint, ShoppingBag, UtensilsCrossed, X } from "lucide-react";
+import { Menu, ShoppingBag, X } from "lucide-react";
 import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,29 +12,19 @@ import { cn } from "@/lib/utils";
 /** Castea a Route para que <Link> acepte rutas dinámicas. */
 const r = (s: string) => s as Route;
 
-/** Enlaces propios de cada vista: solo secciones de la página actual. */
-const NAV: Record<"mascotas" | "restaurante", { href: string; label: string }[]> = {
-  mascotas: [
-    { href: "#inicio", label: "Inicio" },
-    { href: "#categorias", label: "Categorías" },
-    { href: "#productos", label: "Productos" },
-    { href: "#nosotros", label: "Nosotros" },
-    { href: "#contacto", label: "Contacto" },
-  ],
-  restaurante: [
-    { href: "#inicio", label: "Inicio" },
-    { href: "#menu", label: "Menú" },
-    { href: "#especialidades", label: "Especialidades" },
-    { href: "#galeria", label: "Galería" },
-    { href: "#contacto", label: "Contacto" },
-  ],
-};
+/** Enlaces de la página: solo secciones de la tienda de mascotas. */
+const NAV = [
+  { href: "#inicio", label: "Inicio" },
+  { href: "#categorias", label: "Categorías" },
+  { href: "#productos", label: "Productos" },
+  { href: "#nosotros", label: "Nosotros" },
+  { href: "#contacto", label: "Contacto" },
+];
 
-export function Navbar({ view }: { view: "mascotas" | "restaurante" }) {
+export function Navbar() {
   const { count, setCartOpen } = useStore();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const isResto = view === "restaurante";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -62,16 +52,9 @@ export function Navbar({ view }: { view: "mascotas" | "restaurante" }) {
       >
         <nav className="mx-auto flex h-[68px] w-full max-w-7xl items-center justify-between px-5 sm:px-8">
           {/* Logo */}
-          <Link
-            href={r(isResto ? "/premium/restaurante" : "/premium")}
-            className="flex items-center gap-2.5"
-          >
+          <Link href={r("/premium")} className="flex items-center gap-2.5">
             <Image
-              src={
-                isResto
-                  ? "/logo/Antumalen_restaurante_Logo.jpg"
-                  : "/logo/Antumalen_logo.png"
-              }
+              src="/logo/Antumalen_logo.png"
               alt="Antümalen"
               width={44}
               height={44}
@@ -83,9 +66,9 @@ export function Navbar({ view }: { view: "mascotas" | "restaurante" }) {
             </span>
           </Link>
 
-          {/* Links desktop (propios de esta vista) */}
+          {/* Links desktop */}
           <div className="hidden items-center gap-1 lg:flex">
-            {NAV[view].map((l) => (
+            {NAV.map((l) => (
               <a
                 key={l.label}
                 href={l.href}
@@ -98,30 +81,6 @@ export function Navbar({ view }: { view: "mascotas" | "restaurante" }) {
 
           {/* Acciones */}
           <div className="flex items-center gap-2.5">
-            <Link
-              href={r(isResto ? "/premium" : "/premium/restaurante")}
-              aria-label={isResto ? "Ver Mascotas" : "Ver Restaurante"}
-              title={isResto ? "Ver Mascotas" : "Ver Restaurante"}
-              className="pm-switch hidden size-11 place-items-center rounded-full bg-[color:var(--pm-accent)] text-[color:var(--pm-on-accent)] transition-transform hover:scale-110 sm:grid"
-            >
-              <motion.span
-                className="grid place-items-center"
-                animate={{ rotate: [0, -12, 12, -8, 8, 0] }}
-                transition={{
-                  duration: 1.6,
-                  repeat: Infinity,
-                  repeatDelay: 2.4,
-                  ease: "easeInOut",
-                }}
-              >
-                {isResto ? (
-                  <PawPrint className="size-5" />
-                ) : (
-                  <UtensilsCrossed className="size-5" />
-                )}
-              </motion.span>
-            </Link>
-
             <button
               type="button"
               onClick={() => setCartOpen(true)}
@@ -189,7 +148,7 @@ export function Navbar({ view }: { view: "mascotas" | "restaurante" }) {
                 </button>
               </div>
               <nav className="flex flex-col gap-1">
-                {NAV[view].map((l) => (
+                {NAV.map((l) => (
                   <a
                     key={l.label}
                     href={l.href}
@@ -200,18 +159,6 @@ export function Navbar({ view }: { view: "mascotas" | "restaurante" }) {
                   </a>
                 ))}
               </nav>
-              <Link
-                href={r(isResto ? "/premium" : "/premium/restaurante")}
-                onClick={() => setOpen(false)}
-                className="mt-auto inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--pm-accent)] px-5 py-3.5 font-semibold text-[color:var(--pm-on-accent)]"
-              >
-                {isResto ? (
-                  <PawPrint className="size-4" />
-                ) : (
-                  <UtensilsCrossed className="size-4" />
-                )}
-                {isResto ? "Ver Mascotas" : "Ver Restaurante"}
-              </Link>
             </motion.aside>
           </>
         ) : null}

@@ -1,26 +1,20 @@
 import {
   Bird,
   Bone,
-  CupSoda,
-  Drumstick,
   Fish,
-  Flame,
   LayoutGrid,
   type LucideIcon,
-  Pizza,
   Rabbit,
-  Sandwich,
-  UtensilsCrossed,
 } from "lucide-react";
 
 /* ============================================================
-   Datos de Antümalen — tienda de mascotas + restaurante
+   Datos de Antümalen — tienda de mascotas
    El carrito no procesa pagos: arma un pedido por WhatsApp.
    ============================================================ */
 
 export const WHATSAPP_NUMERO = "56987199748"; // +56 9 8719 9748
 
-export type Mode = "tienda" | "restaurante";
+export type Mode = "tienda";
 
 export type Producto = {
   id: string;
@@ -71,39 +65,8 @@ export const CATEGORIAS: Categoria[] = [
   { id: "roedores", nombre: "Roedores", icon: Rabbit },
 ];
 
-/* ---------------- Restaurante ---------------- */
-
-export const MENU: Producto[] = [
-  { id: "completo-italiano", nombre: "Completo Italiano", categoria: "completos", precio: 2890, desc: "Vienesa, tomate, palta y mayo.", imagen: img("1599599810769-bcde5a160d32") },
-  { id: "completo-dinamico", nombre: "Completo Dinámico", categoria: "completos", precio: 2990, desc: "Chucrut, tomate y mayonesa.", imagen: img("1599599810769-bcde5a160d32") },
-  { id: "completo-antumalen", nombre: "Completo Antümalen", categoria: "completos", precio: 3490, desc: "El especial de la casa, bien servido.", imagen: img("1599599810769-bcde5a160d32") },
-  { id: "churrasco-italiano", nombre: "Churrasco Italiano", categoria: "sandwiches", precio: 4990, desc: "Carne, tomate, palta y mayo en pan amasado.", imagen: img("1528735602780-2552fd46c7af") },
-  { id: "barros-luco", nombre: "Barros Luco", categoria: "sandwiches", precio: 4790, desc: "Carne y queso fundido.", imagen: img("1568901346375-23c9450c58cd") },
-  { id: "chacarero", nombre: "Chacarero", categoria: "sandwiches", precio: 5290, desc: "Carne, porotos verdes, tomate y ají.", imagen: img("1551782450-a2132b4ba21d") },
-  { id: "ave-mayo", nombre: "Ave Mayo", categoria: "sandwiches", precio: 4590, desc: "Pollo desmenuzado con mayonesa casera.", imagen: img("1528735602780-2552fd46c7af") },
-  { id: "pizza-napolitana", nombre: "Pizza Napolitana (mediana)", categoria: "pizzas", precio: 7990, desc: "Queso, tomate, jamón y orégano.", imagen: img("1513104890138-7c749659a591") },
-  { id: "pizza-pepperoni", nombre: "Pizza Pepperoni", categoria: "pizzas", precio: 8490, desc: "Doble queso y pepperoni.", imagen: img("1565299624946-b28f40a0ae38") },
-  { id: "pizza-antumalen", nombre: "Pizza Antümalen", categoria: "pizzas", precio: 9990, desc: "La especial de la casa, ingredientes surtidos.", imagen: img("1513104890138-7c749659a591") },
-  { id: "fajitas-pollo", nombre: "Fajitas de Pollo", categoria: "fajitas", precio: 6990, desc: "Pollo, pimentón y cebolla con tortillas.", imagen: img("1551504734-5ee1c4a1479b") },
-  { id: "fajitas-mixtas", nombre: "Fajitas Mixtas", categoria: "fajitas", precio: 7490, desc: "Carne y pollo con guarniciones.", imagen: img("1551504734-5ee1c4a1479b") },
-  { id: "menu-dia", nombre: "Menú del Día", categoria: "menus", precio: 4500, desc: "Almuerzo casero: entrada, fondo y bebida.", imagen: img("1546069901-ba9599a7e63c") },
-  { id: "menu-ejecutivo", nombre: "Menú Ejecutivo", categoria: "menus", precio: 5500, desc: "Plato de fondo abundante, postre y bebida.", imagen: img("1546069901-ba9599a7e63c") },
-  { id: "bebida-lata", nombre: "Bebida en lata", categoria: "bebidas", precio: 1490, desc: "Línea Coca-Cola, 350 cc.", imagen: img("1437418747212-8d9709afab22") },
-  { id: "jugo-natural", nombre: "Jugo Natural", categoria: "bebidas", precio: 2290, desc: "De temporada, recién hecho.", imagen: img("1437418747212-8d9709afab22") },
-];
-
-export const MENU_CATEGORIAS: Categoria[] = [
-  { id: "todos", nombre: "Todos", icon: UtensilsCrossed },
-  { id: "completos", nombre: "Completos", icon: Drumstick },
-  { id: "sandwiches", nombre: "Sándwiches", icon: Sandwich },
-  { id: "pizzas", nombre: "Pizzas", icon: Pizza },
-  { id: "fajitas", nombre: "Fajitas", icon: Flame },
-  { id: "menus", nombre: "Menús", icon: UtensilsCrossed },
-  { id: "bebidas", nombre: "Bebidas", icon: CupSoda },
-];
-
 export const ITEMS_BY_ID: Record<string, Producto> = Object.fromEntries(
-  [...PRODUCTOS, ...MENU].map((p) => [p.id, p]),
+  PRODUCTOS.map((p) => [p.id, p]),
 );
 
 export function buildWhatsappLink(text: string) {

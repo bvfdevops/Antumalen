@@ -2,15 +2,8 @@
 
 const WA_TEST = "56950306560";
 
-export function PremiumWhatsappFloat({
-  view,
-}: {
-  view: "mascotas" | "restaurante";
-}) {
-  const text =
-    view === "restaurante"
-      ? "¡Hola Antümalen! 🍽️ Quiero hacer un pedido / consulta."
-      : "¡Hola Antümalen! 🐾 Quiero hacer un pedido / consulta.";
+export function PremiumWhatsappFloat() {
+  const text = "¡Hola Antümalen! 🐾 Quiero hacer un pedido / consulta.";
   return (
     <a
       href={`https://wa.me/${WA_TEST}?text=${encodeURIComponent(text)}`}

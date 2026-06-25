@@ -83,7 +83,7 @@
   --brand-soft: oklch(0.27 0.04 215);
 }
 
-/* Acento por modo: tienda (azul petróleo) vs restaurante (terracota) */
+/* Acento de marca: azul petróleo */
 [data-mode="tienda"] {
   --brand: oklch(0.44 0.06 215);
   --brand-soft: oklch(0.95 0.03 215);
@@ -91,14 +91,6 @@
 .dark [data-mode="tienda"] {
   --brand: oklch(0.68 0.07 200);
   --brand-soft: oklch(0.27 0.04 215);
-}
-[data-mode="restaurante"] {
-  --brand: oklch(0.52 0.16 35);
-  --brand-soft: oklch(0.95 0.04 60);
-}
-.dark [data-mode="restaurante"] {
-  --brand: oklch(0.68 0.15 45);
-  --brand-soft: oklch(0.3 0.06 45);
 }
 
 @theme inline {
@@ -169,6 +161,47 @@
 }
 
 /* ============================================================
+   Loader con temática de mascotas — huellas que "caminan"
+   Se usa en los loading.tsx de las rutas (App Router).
+   ============================================================ */
+.paw-loader {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+.paw-loader .paw {
+  opacity: 0;
+  transform: translateY(6px) scale(0.7);
+  animation: paw-step 1.6s infinite ease-in-out;
+}
+/* Huellas alternadas: una arriba, otra abajo, como pasos reales */
+.paw-loader .paw:nth-child(odd) {
+  transform: translateY(-6px) scale(0.7);
+}
+.paw-loader .paw:nth-child(1) { animation-delay: 0s; }
+.paw-loader .paw:nth-child(2) { animation-delay: 0.2s; }
+.paw-loader .paw:nth-child(3) { animation-delay: 0.4s; }
+.paw-loader .paw:nth-child(4) { animation-delay: 0.6s; }
+.paw-loader .paw:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes paw-step {
+  0%   { opacity: 0; }
+  20%  { opacity: 1; }
+  60%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .paw-loader .paw {
+    animation: paw-fade 1.4s infinite ease-in-out;
+    opacity: 1;
+  }
+  @keyframes paw-fade {
+    0%, 100% { opacity: 0.35; }
+    50% { opacity: 1; }
+  }
+}
+
+/* ============================================================
    PREMIUM (tercera opción) — landing Mascotas + Restaurante
    Vistas separadas, placeholders skeleton + shimmer, fuentes
    Playfair / Poppins / Inter. Aislado del resto del sitio.
@@ -204,20 +237,6 @@
   font-family: var(--pm-font-body);
   color: var(--pm-fg);
   background: var(--pm-bg);
-}
-.premium[data-view="restaurante"] {
-  --pm-carbon: #1c1814;
-  --pm-ivory: #f6f1e8; /* crema cálida (fondo) */
-  --pm-gold: #c9a86a;
-  --pm-gold-dark: #8c6d35; /* más oscuro para texto legible sobre crema */
-  --pm-accent: var(--pm-gold);
-  --pm-accent-dark: var(--pm-gold-dark);
-  --pm-bg: var(--pm-ivory);
-  --pm-surface: #ffffff;
-  --pm-fg: var(--pm-carbon);
-  --pm-ph-a: #ece6da;
-  --pm-ph-b: #ddd4c4;
-  --pm-ph-fg: #b3a48f;
 }
 .premium .font-display { font-family: var(--pm-font-display); }
 .premium .font-poppins { font-family: var(--pm-font-ui); }

@@ -25,8 +25,7 @@ function FbIcon() {
   );
 }
 
-export function PremiumFooter({ view }: { view: "mascotas" | "restaurante" }) {
-  const isResto = view === "restaurante";
+export function PremiumFooter() {
   return (
     <footer
       id="contacto"
@@ -36,11 +35,7 @@ export function PremiumFooter({ view }: { view: "mascotas" | "restaurante" }) {
         <div>
           <div className="mb-4 flex items-center gap-3">
             <Image
-              src={
-                isResto
-                  ? "/logo/Antumalen_restaurante_Logo.jpg"
-                  : "/logo/Antumalen_logo.png"
-              }
+              src="/logo/Antumalen_logo.png"
               alt="Antümalen"
               width={46}
               height={46}
@@ -49,8 +44,8 @@ export function PremiumFooter({ view }: { view: "mascotas" | "restaurante" }) {
             <b className="font-display text-xl text-white">Antümalen</b>
           </div>
           <p className="max-w-sm text-sm text-white/60">
-            Tienda de mascotas y restaurante de comida casera en San Clemente,
-            Región del Maule. Todo en un mismo lugar, hecho con cariño.
+            Tienda de mascotas en San Clemente, Región del Maule. Alimentos,
+            accesorios y cuidado, todo hecho con cariño.
           </p>
           <div className="mt-5 flex gap-3">
             <a
@@ -81,15 +76,12 @@ export function PremiumFooter({ view }: { view: "mascotas" | "restaurante" }) {
           <ul className="space-y-2.5 text-sm text-white/60">
             <li>
               <Link href={r("/premium")} className="hover:text-[color:var(--pm-accent)]">
-                Mascotas
+                Inicio
               </Link>
             </li>
             <li>
-              <Link
-                href={r("/premium/restaurante")}
-                className="hover:text-[color:var(--pm-accent)]"
-              >
-                Restaurante
+              <Link href={r("/premium#productos")} className="hover:text-[color:var(--pm-accent)]">
+                Productos
               </Link>
             </li>
             <li>
