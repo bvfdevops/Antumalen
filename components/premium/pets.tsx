@@ -71,6 +71,27 @@ const TESTIMONIOS = [
 const BADGES: Record<number, string> = { 0: "Popular", 2: "Nuevo", 4: "Oferta" };
 const featured = PRODUCTOS.slice(0, 8);
 
+/* Imágenes de referencia (Unsplash) — reemplazables por fotos reales. */
+const U = (id: string, w = 600) =>
+  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
+const HERO_IMG = U("1583511655857-d19b40a7a54e", 900);
+const EDITORIAL_IMG = U("1601758228041-f3b2795255f1", 800);
+const PRODUCT_IMG: Record<string, string> = {
+  "proplan-adult-15kg": U("1589924691995-400dc9ecc119"),
+  "proplan-puppy-15kg": U("1601758228041-f3b2795255f1"),
+  "cama-perro-m": U("1591946614720-90a587da4a36"),
+  "juguete-mordedor": U("1576201836106-db1758fd1c97"),
+  "proplan-gato-3kg": U("1514888286974-6c03e2ca1dba"),
+  "arena-gato-10l": U("1573865526739-10659fec78a5"),
+  "rascador-torre": U("1545249390-6bdfa286032f"),
+  "alimento-aves-1kg": U("1452570053594-1b985d6ea890"),
+};
+const AVATARS = [
+  U("1561037404-61cd46aa615b", 120),
+  U("1574158622682-e40e69881006", 120),
+  U("1438761681033-6461ffad8d80", 120),
+];
+
 export function PetsView() {
   const { setMode, setCartOpen } = useStore();
   useEffect(() => {
@@ -149,6 +170,8 @@ export function PetsView() {
                 ratio="4 / 5"
                 icon={PawPrint}
                 label="Foto principal"
+                src={HERO_IMG}
+                alt="Perro y gato felices"
                 className="shadow-[0_30px_70px_rgba(92,75,59,0.18)]"
               />
             </Reveal>
@@ -194,7 +217,7 @@ export function PetsView() {
             <Stagger className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {featured.map((p, i) => (
                 <StaggerItem key={p.id} className="h-full">
-                  <ProductCard producto={p} badge={BADGES[i]} phLabel="Producto" icon={PawPrint} />
+                  <ProductCard producto={p} badge={BADGES[i]} phLabel="Producto" icon={PawPrint} image={PRODUCT_IMG[p.id]} />
                 </StaggerItem>
               ))}
             </Stagger>
@@ -254,6 +277,8 @@ export function PetsView() {
                 ratio="4 / 3"
                 icon={Heart}
                 label="Imagen editorial"
+                src={EDITORIAL_IMG}
+                alt="Mascota feliz"
                 className="bg-white/10"
               />
             </Reveal>
@@ -279,13 +304,16 @@ export function PetsView() {
           <div className="mx-auto w-full max-w-7xl">
             <SectionHead eyebrow="Familias felices" title="Lo que dicen nuestros clientes" />
             <Stagger className="grid grid-cols-1 gap-6 md:grid-cols-3">
-              {TESTIMONIOS.map((t) => (
+              {TESTIMONIOS.map((t, i) => (
                 <StaggerItem key={t.n}>
                   <div className="flex h-full flex-col rounded-3xl bg-[color:var(--pm-surface)] p-7 shadow-[0_4px_18px_rgba(92,75,59,0.06)]">
                     <Stars value={t.r} />
                     <p className="mt-4 flex-1 text-[color:var(--pm-fg)]">“{t.c}”</p>
                     <div className="mt-5 flex items-center gap-3">
-                      <div className="pm-ph size-12 rounded-full" />
+                      <div className="pm-ph size-12 overflow-hidden rounded-full">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={AVATARS[i % AVATARS.length]} alt={t.n} loading="lazy" decoding="async" className="size-full object-cover" onError={(e) => { e.currentTarget.style.display = "none"; }} />
+                      </div>
                       <div>
                         <b className="font-poppins text-sm text-[color:var(--pm-brown)]">{t.n}</b>
                         <p className="text-xs text-[color:var(--pm-muted)]">Cliente Antümalen</p>

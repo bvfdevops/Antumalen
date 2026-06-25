@@ -12,11 +12,13 @@ export function ProductCard({
   icon,
   badge,
   phLabel,
+  image,
 }: {
   producto: Producto;
   icon?: LucideIcon;
   badge?: string;
   phLabel?: string;
+  image?: string;
 }) {
   const { add, inc } = useStore();
   const [qty, setQty] = useState(1);
@@ -42,6 +44,8 @@ export function ProductCard({
           ratio="4 / 3"
           icon={icon}
           label={phLabel}
+          src={image}
+          alt={producto.nombre}
           rounded="rounded-none"
           className="transition-transform duration-500 group-hover:scale-[1.06]"
         />

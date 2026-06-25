@@ -14,20 +14,27 @@ export function Placeholder({
   label,
   className,
   rounded = "rounded-3xl",
+  src,
+  alt = "",
 }: {
   ratio?: string;
   icon?: LucideIcon;
   label?: string;
   className?: string;
   rounded?: string;
+  /** Imagen de referencia (reemplazable). Si no carga, queda el skeleton. */
+  src?: string;
+  alt?: string;
 }) {
   return (
     <div
       className={cn("pm-ph", rounded, className)}
       style={{ aspectRatio: ratio }}
-      aria-hidden
     >
-      <div className="absolute inset-0 z-[1] flex flex-col items-center justify-center gap-2 px-4 text-center text-[color:var(--pm-ph-fg)]">
+      <div
+        className="absolute inset-0 z-[1] flex flex-col items-center justify-center gap-2 px-4 text-center text-[color:var(--pm-ph-fg)]"
+        aria-hidden
+      >
         <Icon className="size-8 opacity-70 sm:size-10" strokeWidth={1.5} />
         {label ? (
           <span className="font-poppins text-[0.7rem] font-semibold uppercase tracking-[0.12em] opacity-80">
@@ -35,6 +42,19 @@ export function Placeholder({
           </span>
         ) : null}
       </div>
+      {src ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 z-[5] size-full object-cover"
+          onError={(e) => {
+            e.currentTarget.style.display = "none";
+          }}
+        />
+      ) : null}
     </div>
   );
 }

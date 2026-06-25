@@ -41,19 +41,38 @@ const BADGES: Record<number, string> = {
   3: "Recomendado",
 };
 
+/* Imágenes de referencia (Unsplash) — reemplazables por fotos reales. */
+const U = (id: string, w = 600) =>
+  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
+const HERO_IMG = U("1504674900247-0877df9cc836", 800);
+const AMBIENTE_IMG = U("1517248135467-4c7edcad34c4", 800);
+const MENU_IMG: Record<string, string> = {
+  completos: U("1599599810769-bcde5a160d32"),
+  sandwiches: U("1528735602780-2552fd46c7af"),
+  pizzas: U("1513104890138-7c749659a591"),
+  fajitas: U("1551504734-5ee1c4a1479b"),
+  menus: U("1546069901-ba9599a7e63c"),
+  bebidas: U("1437418747212-8d9709afab22"),
+};
+const AVATARS = [
+  U("1507003211169-0a1dd7228f2d", 120),
+  U("1494790108377-be9c29b29330", 120),
+  U("1500648767791-00dcc994a43e", 120),
+];
+
 const ESPECIALIDADES = [
-  { t: "Pizzas Artesanales", d: "Masa fresca, ingredientes generosos y horneado al momento.", tag: "Favorita de la casa" },
-  { t: "Completos & Sándwiches", d: "Completos enormes y churrascos jugosos, como deben ser.", tag: "Los más pedidos" },
-  { t: "Menú Casero del Día", d: "Comida de hogar, abundante y a precio accesible.", tag: "Todos los días" },
+  { t: "Pizzas Artesanales", d: "Masa fresca, ingredientes generosos y horneado al momento.", tag: "Favorita de la casa", img: U("1513104890138-7c749659a591") },
+  { t: "Completos & Sándwiches", d: "Completos enormes y churrascos jugosos, como deben ser.", tag: "Los más pedidos", img: U("1528735602780-2552fd46c7af") },
+  { t: "Menú Casero del Día", d: "Comida de hogar, abundante y a precio accesible.", tag: "Todos los días", img: U("1546069901-ba9599a7e63c") },
 ];
 
 const GALERIA = [
-  { label: "Local", ratio: "4 / 5" },
-  { label: "Plato", ratio: "1 / 1" },
-  { label: "Cocina", ratio: "4 / 3" },
-  { label: "Ingredientes", ratio: "1 / 1" },
-  { label: "Pizza", ratio: "4 / 5" },
-  { label: "Ambiente", ratio: "4 / 3" },
+  { label: "Local", ratio: "4 / 5", img: U("1517248135467-4c7edcad34c4", 700) },
+  { label: "Plato", ratio: "1 / 1", img: U("1504674900247-0877df9cc836") },
+  { label: "Cocina", ratio: "4 / 3", img: U("1556910103-1c02745aae4d", 700) },
+  { label: "Ingredientes", ratio: "1 / 1", img: U("1556909212-d5b604d0c90d") },
+  { label: "Pizza", ratio: "4 / 5", img: U("1565299624946-b28f40a0ae38", 700) },
+  { label: "Ambiente", ratio: "4 / 3", img: U("1552566626-52f8b828add9", 700) },
 ];
 
 const TESTIMONIOS = [
@@ -153,6 +172,8 @@ export function RestaurantView() {
                 ratio="3 / 4"
                 icon={ChefHat}
                 label="Foto gastronómica"
+                src={HERO_IMG}
+                alt="Plato casero de Antümalen"
                 className="shadow-[0_30px_70px_rgba(0,0,0,0.25)]"
               />
             </Reveal>
@@ -196,6 +217,7 @@ export function RestaurantView() {
                     badge={BADGES[i]}
                     icon={ICON_BY_CAT[p.categoria] ?? UtensilsCrossed}
                     phLabel={p.categoria}
+                    image={MENU_IMG[p.categoria]}
                   />
                 </StaggerItem>
               ))}
@@ -223,6 +245,8 @@ export function RestaurantView() {
                       ratio="4 / 3"
                       icon={Flame}
                       label="Foto destacada"
+                      src={e.img}
+                      alt={e.t}
                       rounded="rounded-none"
                       className="bg-white/[0.06]"
                     />
@@ -251,7 +275,7 @@ export function RestaurantView() {
             <div className="columns-2 gap-4 md:columns-3 [&>*]:mb-4">
               {GALERIA.map((g, i) => (
                 <Reveal key={g.label} kind="scale" delay={i * 0.05}>
-                  <Placeholder ratio={g.ratio} icon={ImageIcon} label={g.label} />
+                  <Placeholder ratio={g.ratio} icon={ImageIcon} label={g.label} src={g.img} alt={g.label} />
                 </Reveal>
               ))}
             </div>
@@ -262,7 +286,7 @@ export function RestaurantView() {
         <section id="nosotros" className="px-5 pb-20 sm:px-8">
           <div className="mx-auto grid w-full max-w-7xl items-center gap-10 lg:grid-cols-2">
             <Reveal kind="scale">
-              <Placeholder ratio="4 / 3" icon={Sparkles} label="Interior del local" />
+              <Placeholder ratio="4 / 3" icon={Sparkles} label="Interior del local" src={AMBIENTE_IMG} alt="Interior del restaurante" />
             </Reveal>
             <Reveal>
               <span className="font-poppins text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--pm-accent-dark)]">
@@ -299,7 +323,10 @@ export function RestaurantView() {
                     <Stars value={t.r} />
                     <p className="mt-4 flex-1 text-[color:var(--pm-fg)]/80">“{t.c}”</p>
                     <div className="mt-5 flex items-center gap-3">
-                      <div className="pm-ph size-12 rounded-full" />
+                      <div className="pm-ph size-12 overflow-hidden rounded-full">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={AVATARS[i % AVATARS.length]} alt={t.n} loading="lazy" decoding="async" className="size-full object-cover" onError={(e) => { e.currentTarget.style.display = "none"; }} />
+                      </div>
                       <div>
                         <b className="font-poppins text-sm text-[color:var(--pm-fg)]">{t.n}</b>
                         <p className="text-xs text-[color:var(--pm-muted)]">San Clemente</p>
