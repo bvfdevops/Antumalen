@@ -42,7 +42,7 @@ export function PremiumCart() {
       .map((l) => `• ${l.nombre} x${l.cantidad}`)
       .join("\n");
     const msg =
-      `Hola 👋\n\nQuiero realizar el siguiente pedido:\n\n${items}\n\n` +
+      `Hola\n\nQuiero realizar el siguiente pedido:\n\n${items}\n\n` +
       `Total: ${CLP(total)}\n\n` +
       `Nombre: ${nombre}\n` +
       `Dirección: ${direccion}\n` +

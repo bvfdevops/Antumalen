@@ -128,7 +128,7 @@ export function PetsView() {
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href={waLink("¡Hola Antümalen! 🐾 Quiero comprar.")}
+                  href={waLink("¡Hola Antümalen! Quiero comprar.")}
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-7 py-4 font-poppins font-semibold text-white shadow-lg shadow-[#25D366]/30 transition-transform hover:-translate-y-0.5"
                 >
                   Comprar por WhatsApp
@@ -254,7 +254,7 @@ export function PetsView() {
                 animales.
               </p>
               <a
-                href={waLink("¡Hola Antümalen! 🐾 Quiero más información.")}
+                href={waLink("¡Hola Antümalen! Quiero más información.")}
                 className="mt-6 inline-flex items-center gap-2 rounded-full bg-[color:var(--pm-surface)] px-6 py-3 font-poppins font-semibold text-[color:var(--pm-fg)] transition-transform hover:-translate-y-0.5"
               >
                 Conversemos
@@ -335,7 +335,7 @@ export function PetsView() {
               Ver mi pedido
             </button>
             <a
-              href={waLink("¡Hola Antümalen! 🐾 Necesito ayuda para elegir.")}
+              href={waLink("¡Hola Antümalen! Necesito ayuda para elegir.")}
               className="ml-3 mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[#1da851] px-8 py-4 font-poppins font-semibold text-white transition-transform hover:-translate-y-0.5"
             >
               Hablar por WhatsApp

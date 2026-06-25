@@ -17,7 +17,7 @@ export function CartDrawer() {
     lines.length === 0
       ? "Hola Antümalen, quiero hacer un pedido en la tienda."
       : [
-          "¡Hola Antümalen! 🐾 Quiero pedir de la tienda:",
+          "¡Hola Antümalen! Quiero pedir de la tienda:",
           "",
           ...lines.map(
             (i) => `• ${i.cantidad}x ${i.nombre} — ${CLP(i.precio * i.cantidad)}`,
@@ -25,7 +25,7 @@ export function CartDrawer() {
           "",
           `Total aprox: ${CLP(total)}`,
           "",
-          "¿Me confirman disponibilidad y entrega? 🙂",
+          "¿Me confirman disponibilidad y entrega?",
         ].join("\n");
 
   return (
