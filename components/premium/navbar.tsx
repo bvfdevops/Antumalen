@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, ShoppingBag, UtensilsCrossed, X } from "lucide-react";
+import { Menu, PawPrint, ShoppingBag, UtensilsCrossed, X } from "lucide-react";
 import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -100,13 +100,26 @@ export function Navbar({ view }: { view: "mascotas" | "restaurante" }) {
           <div className="flex items-center gap-2.5">
             <Link
               href={r(isResto ? "/premium" : "/premium/restaurante")}
-              className={cn(
-                "hidden items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold text-[color:var(--pm-surface)] transition-all hover:-translate-y-0.5 sm:inline-flex",
-                "bg-[color:var(--pm-fg)]",
-              )}
+              aria-label={isResto ? "Ver Mascotas" : "Ver Restaurante"}
+              title={isResto ? "Ver Mascotas" : "Ver Restaurante"}
+              className="pm-switch hidden size-11 place-items-center rounded-full bg-[color:var(--pm-accent)] text-[color:var(--pm-on-accent)] transition-transform hover:scale-110 sm:grid"
             >
-              <UtensilsCrossed className="size-4" />
-              {isResto ? "Ver Mascotas" : "Ver Restaurante"}
+              <motion.span
+                className="grid place-items-center"
+                animate={{ rotate: [0, -12, 12, -8, 8, 0] }}
+                transition={{
+                  duration: 1.6,
+                  repeat: Infinity,
+                  repeatDelay: 2.4,
+                  ease: "easeInOut",
+                }}
+              >
+                {isResto ? (
+                  <PawPrint className="size-5" />
+                ) : (
+                  <UtensilsCrossed className="size-5" />
+                )}
+              </motion.span>
             </Link>
 
             <button
@@ -190,9 +203,13 @@ export function Navbar({ view }: { view: "mascotas" | "restaurante" }) {
               <Link
                 href={r(isResto ? "/premium" : "/premium/restaurante")}
                 onClick={() => setOpen(false)}
-                className="mt-auto inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--pm-accent)] px-5 py-3.5 font-semibold text-[#1b1b1b]"
+                className="mt-auto inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--pm-accent)] px-5 py-3.5 font-semibold text-[color:var(--pm-on-accent)]"
               >
-                <UtensilsCrossed className="size-4" />
+                {isResto ? (
+                  <PawPrint className="size-4" />
+                ) : (
+                  <UtensilsCrossed className="size-4" />
+                )}
                 {isResto ? "Ver Mascotas" : "Ver Restaurante"}
               </Link>
             </motion.aside>

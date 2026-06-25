@@ -102,6 +102,11 @@ export function PremiumFooter({ view }: { view: "mascotas" | "restaurante" }) {
                 Sitio actual
               </Link>
             </li>
+            <li>
+              <a href="/estudio.html" className="hover:text-[color:var(--pm-accent)]">
+                ← Volver al estudio
+              </a>
+            </li>
           </ul>
         </div>
 

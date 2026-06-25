@@ -259,3 +259,16 @@
   70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
   100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
+
+/* Botón de cambio mascotas/restaurante: pulso con el color de acento */
+.pm-switch {
+  animation: pm-switch-pulse 2.6s infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pm-switch { animation: none; }
+}
+@keyframes pm-switch-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--pm-accent) 55%, transparent); }
+  70% { box-shadow: 0 0 0 12px color-mix(in srgb, var(--pm-accent) 0%, transparent); }
+  100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--pm-accent) 0%, transparent); }
+}

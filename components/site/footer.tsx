@@ -69,6 +69,12 @@ export function Footer() {
           >
             Inicio
           </a>
+          <a
+            href="/estudio.html"
+            className="text-muted-foreground transition-colors hover:text-foreground"
+          >
+            ← Volver al estudio
+          </a>
         </nav>
 
         <div className="flex flex-col gap-3 text-sm">
