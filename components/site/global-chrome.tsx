@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { CartDrawer } from "@/components/site/cart-drawer";
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
+import { SiteThemeLab } from "@/components/site/site-theme-lab";
 import { WhatsappFloat } from "@/components/site/whatsapp-float";
 
 /** La tercera opción (/premium) trae su propia navegación, carrito y
@@ -24,6 +25,7 @@ export function GlobalChrome() {
       <Footer />
       <CartDrawer />
       <WhatsappFloat />
+      <SiteThemeLab />
     </>
   );
 }

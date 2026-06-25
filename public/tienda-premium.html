@@ -9,7 +9,7 @@
 <link rel="icon" href="imagenes/logo/Antumalen_logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Montserrat:wght@500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    ANTÜMALEN PETS — Landing premium
@@ -33,18 +33,20 @@
   --shadow-lg:0 28px 70px rgba(92,75,59,.16);
   --ease:cubic-bezier(.22,.61,.36,1);
   --t:300ms var(--ease);
+  --font-title:'Poppins',sans-serif;
+  --font-body:'Inter',system-ui,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
 body{
-  font-family:'Inter',system-ui,sans-serif;
+  font-family:var(--font-body);
   color:var(--ink);
   background:var(--cream);
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
-h1,h2,h3,h4,.brand-name{font-family:'Poppins',sans-serif;line-height:1.12;letter-spacing:-.02em}
+h1,h2,h3,h4,.brand-name{font-family:var(--font-title);line-height:1.12;letter-spacing:-.02em}
 img{display:block;max-width:100%}
 a{text-decoration:none;color:inherit}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
@@ -381,19 +383,19 @@ footer{background:var(--brown);color:#e9e2d8;padding:64px 0 28px}
     </div>
     <div class="cat-grid">
       <a href="#productos" class="cat-card reveal">
-        <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=80" alt="Perros" onerror="this.style.background='#7BAE7F'">
+        <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=80" loading="lazy" decoding="async" alt="Perros" onerror="this.style.background='#7BAE7F'">
         <div class="cat-meta"><h3>Perros</h3><span>Ver productos →</span></div>
       </a>
       <a href="#productos" class="cat-card reveal">
-        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80" alt="Gatos" onerror="this.style.background='#7BAE7F'">
+        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80" loading="lazy" decoding="async" alt="Gatos" onerror="this.style.background='#7BAE7F'">
         <div class="cat-meta"><h3>Gatos</h3><span>Ver productos →</span></div>
       </a>
       <a href="#productos" class="cat-card reveal">
-        <img src="https://images.unsplash.com/photo-1452570053594-1b985d6ea890?auto=format&fit=crop&w=600&q=80" alt="Aves" onerror="this.style.background='#7BAE7F'">
+        <img src="https://images.unsplash.com/photo-1452570053594-1b985d6ea890?auto=format&fit=crop&w=600&q=80" loading="lazy" decoding="async" alt="Aves" onerror="this.style.background='#7BAE7F'">
         <div class="cat-meta"><h3>Aves</h3><span>Ver productos →</span></div>
       </a>
       <a href="#productos" class="cat-card reveal">
-        <img src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?auto=format&fit=crop&w=600&q=80" alt="Roedores" onerror="this.style.background='#7BAE7F'">
+        <img src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?auto=format&fit=crop&w=600&q=80" loading="lazy" decoding="async" alt="Roedores" onerror="this.style.background='#7BAE7F'">
         <div class="cat-meta"><h3>Roedores</h3><span>Ver productos →</span></div>
       </a>
     </div>
@@ -452,7 +454,7 @@ footer{background:var(--brown);color:#e9e2d8;padding:64px 0 28px}
         <div class="stars">★★★★★</div>
         <p>"Pedí el alimento de mi perro por WhatsApp y llegó el mismo día. La atención fue súper amable, se nota el cariño por los animales."</p>
         <div class="test-who">
-          <img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=120&q=80" alt="" onerror="this.style.background='#7BAE7F'">
+          <img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=120&q=80" alt="" loading="lazy" decoding="async" onerror="this.style.background='#7BAE7F'">
           <div><b>Camila R.</b><small>con Toby 🐶</small></div>
         </div>
       </div>
@@ -460,7 +462,7 @@ footer{background:var(--brown);color:#e9e2d8;padding:64px 0 28px}
         <div class="stars">★★★★★</div>
         <p>"Los precios son justos y la arena que me recomendaron para mi gata es excelente. Volví a comprar sin dudarlo."</p>
         <div class="test-who">
-          <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=120&q=80" alt="" onerror="this.style.background='#7BAE7F'">
+          <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=120&q=80" alt="" loading="lazy" decoding="async" onerror="this.style.background='#7BAE7F'">
           <div><b>Matías P.</b><small>con Luna 🐱</small></div>
         </div>
       </div>
@@ -468,7 +470,7 @@ footer{background:var(--brown);color:#e9e2d8;padding:64px 0 28px}
         <div class="stars">★★★★★</div>
         <p>"Encontré todo para mi pajarito en un solo lugar. El proceso de compra por WhatsApp fue rapidísimo y claro. Recomendado 100%."</p>
         <div class="test-who">
-          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80" alt="" onerror="this.style.background='#7BAE7F'">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80" alt="" loading="lazy" decoding="async" onerror="this.style.background='#7BAE7F'">
           <div><b>Valentina S.</b><small>con Kiwi 🐦</small></div>
         </div>
       </div>
@@ -763,5 +765,99 @@ updateCart();
 initWaLinks();
 observeReveals();
 </script>
+<!-- ===== Panel de tema (paleta + fuentes) ===== -->
+<style>
+  #tl{position:fixed;left:14px;top:84px;z-index:85;font-family:'Inter',sans-serif}
+  #tl .tl-btn{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.92);
+    border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:10px 14px;font-weight:600;
+    font-size:.88rem;color:#27272a;box-shadow:0 10px 30px rgba(0,0,0,.12);backdrop-filter:blur(8px);
+    cursor:pointer;transition:transform .2s}
+  #tl .tl-btn:hover{transform:translateY(-2px)}
+  #tl .tl-btn svg{width:16px;height:16px}
+  #tl .tl-panel{display:none;margin-top:12px;width:256px;max-height:72vh;overflow-y:auto;
+    background:rgba(255,255,255,.97);border:1px solid rgba(0,0,0,.08);border-radius:16px;
+    padding:16px;box-shadow:0 24px 60px rgba(0,0,0,.22);backdrop-filter:blur(8px);color:#27272a}
+  #tl.open .tl-panel{display:block}
+  #tl .tl-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+  #tl .tl-h b{font-size:.92rem;color:#18181b}
+  #tl .tl-x{width:26px;height:26px;border-radius:50%;background:#f4f4f5;display:grid;place-items:center;cursor:pointer;font-size:1.1rem;color:#52525b}
+  #tl .tl-lbl{display:flex;align-items:center;gap:6px;font-size:.68rem;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#a1a1aa;margin:14px 0 8px}
+  #tl .tl-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  #tl .tl-chip{border:1px solid #e4e4e7;border-radius:12px;padding:8px;cursor:pointer;text-align:left;background:#fff;transition:transform .15s}
+  #tl .tl-chip:hover{transform:translateY(-2px)}
+  #tl .tl-chip.on{border-color:#18181b;box-shadow:0 0 0 2px rgba(0,0,0,.12)}
+  #tl .tl-sw{display:flex;gap:4px;margin-bottom:6px}
+  #tl .tl-sw span{width:18px;height:18px;border-radius:5px;border:1px solid rgba(0,0,0,.1)}
+  #tl .tl-chip small{font-size:.72rem;font-weight:600;color:#3f3f46}
+  #tl .tl-fonts{display:flex;flex-direction:column;gap:6px}
+  #tl .tl-font{display:flex;justify-content:space-between;align-items:center;border:1px solid #e4e4e7;
+    border-radius:12px;padding:8px 12px;cursor:pointer;background:#fff}
+  #tl .tl-font.on{border-color:#18181b;background:#fafafa}
+  #tl .tl-font b{font-size:.84rem;color:#27272a;display:block}
+  #tl .tl-font i{font-style:normal;font-size:.68rem;color:#a1a1aa}
+  @media(max-width:680px){#tl{top:78px;left:10px}#tl .tl-panel{width:230px}}
+</style>
+<div id="tl">
+  <button class="tl-btn" onclick="document.getElementById('tl').classList.toggle('open')" aria-label="Personalizar tema">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12.5" r="2.5"/><path d="M12 2a10 10 0 0 0 0 20 2.5 2.5 0 0 0 2-4 2.5 2.5 0 0 1 2-4h2a4 4 0 0 0 4-4 10 10 0 0 0-10-8z"/></svg>
+    Tema
+  </button>
+  <div class="tl-panel">
+    <div class="tl-h"><b>Personalizar</b><div class="tl-x" onclick="document.getElementById('tl').classList.remove('open')">×</div></div>
+    <div class="tl-lbl">🎨 Paleta de colores</div>
+    <div class="tl-grid" id="tlPal"></div>
+    <div class="tl-lbl">🔤 Tipografía</div>
+    <div class="tl-fonts" id="tlFont"></div>
+    <p style="margin-top:14px;font-size:.7rem;color:#71717a;line-height:1.4">Demo: prueba combinaciones. Se guarda en este navegador.</p>
+  </div>
+</div>
+<script>
+(function(){
+  const PAL=[
+    {id:"default",name:"Original",bg:"#F8F5F0",sec:"#F2F2F2",text:"#2c2620",muted:"#7a7066",accent:"#7BAE7F",accentDark:"#5f9163",heading:"#5C4B3B"},
+    {id:"dorado",name:"Dorado",bg:"#f6f1e8",sec:"#efe7d8",text:"#1c1814",muted:"#6b7280",accent:"#c9a86a",accentDark:"#8c6d35",heading:"#2a2118"},
+    {id:"terracota",name:"Terracota",bg:"#fbf5f0",sec:"#f3e7dd",text:"#3a2820",muted:"#8a7163",accent:"#c2703d",accentDark:"#9c5527",heading:"#3a2820"},
+    {id:"oceano",name:"Océano",bg:"#eef5f6",sec:"#e2eef0",text:"#13282c",muted:"#5b7176",accent:"#2a9d8f",accentDark:"#1d7065",heading:"#13282c"},
+    {id:"lavanda",name:"Lavanda",bg:"#f5f3fb",sec:"#ece8f6",text:"#272238",muted:"#6c6782",accent:"#8b7bd8",accentDark:"#5b4ca6",heading:"#272238"},
+    {id:"coral",name:"Coral",bg:"#fdf3f1",sec:"#f7e6e2",text:"#3a2422",muted:"#8a6f6b",accent:"#e76f51",accentDark:"#c14d31",heading:"#3a2422"}
+  ];
+  const FON=[
+    {id:"default",name:"Original",sample:"Poppins · Inter",title:"'Poppins',sans-serif",body:"'Inter',system-ui,sans-serif"},
+    {id:"elegante",name:"Elegante",sample:"Playfair · Inter",title:"'Playfair Display',serif",body:"'Inter',sans-serif"},
+    {id:"geometrico",name:"Geométrico",sample:"Montserrat",title:"'Montserrat',sans-serif",body:"'Inter',sans-serif"},
+    {id:"serif",name:"Serif suave",sample:"Lora · Poppins",title:"'Lora',serif",body:"'Poppins',sans-serif"},
+    {id:"editorial",name:"Editorial",sample:"Playfair · Poppins",title:"'Playfair Display',serif",body:"'Poppins',sans-serif"}
+  ];
+  const root=document.documentElement.style;
+  function applyPal(p){
+    root.setProperty('--cream',p.bg);root.setProperty('--grey',p.sec);
+    root.setProperty('--ink',p.text);root.setProperty('--muted',p.muted);
+    root.setProperty('--sage',p.accent);root.setProperty('--sage-dark',p.accentDark);
+    root.setProperty('--brown',p.heading);
+  }
+  function applyFont(f){root.setProperty('--font-title',f.title);root.setProperty('--font-body',f.body);}
+  let curPal=localStorage.getItem('tl_pal')||'default';
+  let curFont=localStorage.getItem('tl_font')||'default';
+  function renderPal(){
+    document.getElementById('tlPal').innerHTML=PAL.map(p=>
+      `<button class="tl-chip ${p.id===curPal?'on':''}" data-p="${p.id}">
+        <div class="tl-sw"><span style="background:${p.bg}"></span><span style="background:${p.accent}"></span><span style="background:${p.text}"></span></div>
+        <small>${p.name}</small></button>`).join('');
+    document.querySelectorAll('#tlPal .tl-chip').forEach(b=>b.onclick=()=>{
+      curPal=b.dataset.p;localStorage.setItem('tl_pal',curPal);applyPal(PAL.find(x=>x.id===curPal));renderPal();});
+  }
+  function renderFont(){
+    document.getElementById('tlFont').innerHTML=FON.map(f=>
+      `<button class="tl-font ${f.id===curFont?'on':''}" data-f="${f.id}"><span><b>${f.name}</b><i>${f.sample}</i></span>${f.id===curFont?'✓':''}</button>`).join('');
+    document.querySelectorAll('#tlFont .tl-font').forEach(b=>b.onclick=()=>{
+      curFont=b.dataset.f;localStorage.setItem('tl_font',curFont);applyFont(FON.find(x=>x.id===curFont));renderFont();});
+  }
+  applyPal(PAL.find(x=>x.id===curPal)||PAL[0]);
+  applyFont(FON.find(x=>x.id===curFont)||FON[0]);
+  renderPal();renderFont();
+})();
+</script>
+
 </body>
 </html>

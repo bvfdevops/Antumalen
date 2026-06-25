@@ -1,5 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Caveat, Fraunces, Nunito_Sans } from "next/font/google";
+import {
+  Caveat,
+  Fraunces,
+  Inter,
+  Lora,
+  Montserrat,
+  Nunito_Sans,
+  Playfair_Display,
+  Poppins,
+} from "next/font/google";
 import { Toaster } from "sonner";
 import { StoreProvider } from "@/components/store-provider";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -24,6 +33,13 @@ const caveat = Caveat({
   display: "swap",
 });
 
+// Fuentes solo para el panel de demo (no se precargan para no penalizar el rendimiento).
+const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair", display: "swap", preload: false });
+const poppins = Poppins({ subsets: ["latin"], weight: ["500", "600", "700"], variable: "--font-poppins", display: "swap", preload: false });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap", preload: false });
+const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat", display: "swap", preload: false });
+const lora = Lora({ subsets: ["latin"], variable: "--font-lora", display: "swap", preload: false });
+
 export const metadata: Metadata = {
   title: "Antümalen — Tienda de mascotas y Restaurante | San Clemente",
   description:
@@ -43,7 +59,7 @@ export default function RootLayout({
       lang="es-CL"
       data-mode="tienda"
       suppressHydrationWarning
-      className={`${fraunces.variable} ${nunito.variable} ${caveat.variable}`}
+      className={`${fraunces.variable} ${nunito.variable} ${caveat.variable} ${playfair.variable} ${poppins.variable} ${inter.variable} ${montserrat.variable} ${lora.variable}`}
     >
       <body>
         <ThemeProvider
