@@ -8,8 +8,6 @@ export function WhatsappFloat() {
   return (
     <motion.a
       href={buildWhatsappLink("Hola Antümalen, quiero hacer un pedido.")}
-      target="_blank"
-      rel="noopener"
       aria-label="Escríbenos por WhatsApp"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}

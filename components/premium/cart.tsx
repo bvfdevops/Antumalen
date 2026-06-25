@@ -48,10 +48,7 @@ export function PremiumCart() {
       `Dirección: ${direccion}\n` +
       `Observaciones: ${obs}\n\n` +
       `Muchas gracias.`;
-    window.open(
-      `https://wa.me/${WA_TEST}?text=${encodeURIComponent(msg)}`,
-      "_blank",
-    );
+    window.location.href = `https://wa.me/${WA_TEST}?text=${encodeURIComponent(msg)}`;
   }
 
   const panelMotion = isMobile

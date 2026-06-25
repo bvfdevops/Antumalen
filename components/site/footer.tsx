@@ -1,6 +1,7 @@
 "use client";
 
-import { Clock, MapPin, PawPrint } from "lucide-react";
+import { Clock, MapPin } from "lucide-react";
+import Image from "next/image";
 import {
   FacebookIcon,
   InstagramIcon,
@@ -16,8 +17,14 @@ export function Footer() {
       <div className="container-page grid gap-10 py-14 lg:grid-cols-[1.4fr_1fr_1.3fr_1.3fr]">
         <div>
           <div className="flex items-center gap-2.5">
-            <span className="grid size-9 place-items-center rounded-xl bg-[var(--brand)] text-primary-foreground">
-              <PawPrint className="size-5" />
+            <span className="grid size-9 place-items-center rounded-xl bg-[var(--brand)] p-1">
+              <Image
+                src="/logo/Antumalen_logo_nobg.png"
+                alt="Antümalen"
+                width={36}
+                height={36}
+                className="size-full object-contain"
+              />
             </span>
             <span className="font-display text-lg font-semibold">Antümalen</span>
           </div>
@@ -28,8 +35,6 @@ export function Footer() {
           <div className="mt-5 flex gap-2">
             <a
               href="https://www.instagram.com/antumalenpets/"
-              target="_blank"
-              rel="noopener"
               aria-label="Instagram"
               className="grid size-10 place-items-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:text-[var(--brand)]"
             >
@@ -37,8 +42,6 @@ export function Footer() {
             </a>
             <a
               href="https://web.facebook.com/people/Ant%C3%BCmalen-Pets/100069050627029/"
-              target="_blank"
-              rel="noopener"
               aria-label="Facebook"
               className="grid size-10 place-items-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:text-[var(--brand)]"
             >
@@ -79,8 +82,6 @@ export function Footer() {
           <h4 className="font-display text-base font-semibold">Contacto</h4>
           <a
             href={buildWhatsappLink("Hola Antümalen, tengo una consulta.")}
-            target="_blank"
-            rel="noopener"
             className="flex items-center gap-3 rounded-xl border border-border bg-card p-3 transition-colors hover:border-whatsapp/50"
           >
             <span className="grid size-9 place-items-center rounded-full bg-whatsapp text-white">

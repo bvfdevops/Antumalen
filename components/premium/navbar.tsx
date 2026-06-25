@@ -54,11 +54,11 @@ export function Navbar() {
           {/* Logo */}
           <Link href={r("/premium")} className="flex items-center gap-2.5">
             <Image
-              src="/logo/Antumalen_logo.png"
+              src="/logo/Antumalen_logo_nobg.png"
               alt="Antümalen"
               width={44}
               height={44}
-              className="size-10 rounded-xl object-cover shadow-sm ring-1 ring-[color:var(--pm-border)]"
+              className="size-10 rounded-xl bg-[#0E5A6B] object-contain p-1 shadow-sm"
               priority
             />
             <span className="font-display text-lg font-bold tracking-tight text-[color:var(--pm-fg)]">

@@ -1,8 +1,9 @@
 "use client";
 
-import { Moon, PawPrint, ShoppingBag, Sun } from "lucide-react";
+import { Moon, ShoppingBag, Sun } from "lucide-react";
 import type { Route } from "next";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useStore } from "@/components/store-provider";
@@ -37,8 +38,15 @@ export function Header() {
     >
       <div className="container-page flex h-16 items-center justify-between gap-4">
         <Link href={"/inicio" as string as Route} className="flex items-center gap-2.5">
-          <span className="grid size-9 place-items-center rounded-xl bg-[var(--brand)] text-primary-foreground shadow-sm">
-            <PawPrint className="size-5" />
+          <span className="grid size-9 place-items-center rounded-xl bg-[var(--brand)] p-1 shadow-sm">
+            <Image
+              src="/logo/Antumalen_logo_nobg.png"
+              alt="Antümalen"
+              width={36}
+              height={36}
+              className="size-full object-contain"
+              priority
+            />
           </span>
           <span className="font-display text-lg font-semibold leading-none">
             Antümalen <span className="text-[var(--brand)]">Pets</span>

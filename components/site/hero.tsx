@@ -67,8 +67,6 @@ export function Hero() {
                 href={buildWhatsappLink(
                   "Hola Antümalen, quiero hacer un pedido en la tienda.",
                 )}
-                target="_blank"
-                rel="noopener"
               >
                 <WhatsappIcon className="size-4" />
                 Pedir por WhatsApp

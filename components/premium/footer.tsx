@@ -35,11 +35,11 @@ export function PremiumFooter() {
         <div>
           <div className="mb-4 flex items-center gap-3">
             <Image
-              src="/logo/Antumalen_logo.png"
+              src="/logo/Antumalen_logo_nobg.png"
               alt="Antümalen"
               width={46}
               height={46}
-              className="size-11 rounded-xl object-cover ring-1 ring-white/10"
+              className="size-11 object-contain"
             />
             <b className="font-display text-xl text-white">Antümalen</b>
           </div>
@@ -50,8 +50,6 @@ export function PremiumFooter() {
           <div className="mt-5 flex gap-3">
             <a
               href="https://www.instagram.com/antumalenpets/"
-              target="_blank"
-              rel="noopener noreferrer"
               aria-label="Instagram"
               className="grid size-10 place-items-center rounded-xl bg-white/10 transition-all hover:-translate-y-0.5 hover:bg-[color:var(--pm-accent)]"
             >
@@ -59,8 +57,6 @@ export function PremiumFooter() {
             </a>
             <a
               href="https://web.facebook.com/people/Antümalen-Pets/100069050627029/"
-              target="_blank"
-              rel="noopener noreferrer"
               aria-label="Facebook"
               className="grid size-10 place-items-center rounded-xl bg-white/10 transition-all hover:-translate-y-0.5 hover:bg-[color:var(--pm-accent)]"
             >

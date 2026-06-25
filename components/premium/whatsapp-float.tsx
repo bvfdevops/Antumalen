@@ -7,8 +7,6 @@ export function PremiumWhatsappFloat() {
   return (
     <a
       href={`https://wa.me/${WA_TEST}?text=${encodeURIComponent(text)}`}
-      target="_blank"
-      rel="noopener noreferrer"
       aria-label="Escríbenos por WhatsApp"
       className="pm-wa-float fixed bottom-6 right-6 z-[60] grid size-14 place-items-center rounded-full bg-[#25D366] text-white shadow-xl shadow-[#25D366]/40 transition-transform hover:scale-110"
     >

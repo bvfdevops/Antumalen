@@ -121,7 +121,7 @@ export function CartDrawer() {
             </strong>
           </div>
           <Button variant="whatsapp" size="lg" className="w-full" asChild>
-            <a href={buildWhatsappLink(waText)} target="_blank" rel="noopener">
+            <a href={buildWhatsappLink(waText)}>
               <WhatsappIcon className="size-4" />
               Enviar pedido por WhatsApp
             </a>
