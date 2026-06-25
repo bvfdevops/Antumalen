@@ -18,6 +18,7 @@ import {
 import { useEffect } from "react";
 import { useStore } from "@/components/store-provider";
 import { PRODUCTOS } from "@/lib/data";
+import { EstudioLink } from "./estudio-link";
 import { PremiumFooter } from "./footer";
 import { Navbar } from "./navbar";
 import { PremiumCart } from "./cart";
@@ -102,6 +103,7 @@ export function PetsView() {
     <div className="premium" data-view="mascotas">
       <Navbar view="mascotas" />
       <ThemeLab />
+      <EstudioLink />
       <PremiumCart />
       <PremiumWhatsappFloat view="mascotas" />
 

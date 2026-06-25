@@ -14,6 +14,7 @@ import { useStore } from "@/components/store-provider";
 import { MENU, MENU_CATEGORIAS } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { PremiumCart } from "./cart";
+import { EstudioLink } from "./estudio-link";
 import { PremiumFooter } from "./footer";
 import { Navbar } from "./navbar";
 import {
@@ -98,6 +99,7 @@ export function RestaurantView() {
     <div className="premium" data-view="restaurante">
       <Navbar view="restaurante" />
       <ThemeLab />
+      <EstudioLink />
       <PremiumCart />
       <PremiumWhatsappFloat view="restaurante" />
 
