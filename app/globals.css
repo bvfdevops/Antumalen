@@ -202,9 +202,9 @@
 }
 
 /* ============================================================
-   PREMIUM (tercera opción) — landing Mascotas + Restaurante
-   Vistas separadas, placeholders skeleton + shimmer, fuentes
-   Playfair / Poppins / Inter. Aislado del resto del sitio.
+   Tienda de mascotas — estilos de la landing
+   Placeholders skeleton + shimmer, fuentes Playfair / Poppins /
+   Inter (el panel de temas las puede cambiar).
    ============================================================ */
 .premium {
   --pm-cream: #f8f5f0;

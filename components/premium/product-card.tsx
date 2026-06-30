@@ -4,7 +4,7 @@ import { Check, type LucideIcon, Minus, Plus } from "lucide-react";
 import { useState } from "react";
 import { useStore } from "@/components/store-provider";
 import type { Producto } from "@/lib/data";
-import { CLP, cn } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { Placeholder } from "./primitives";
 
 export function ProductCard({
@@ -59,8 +59,8 @@ export function ProductCard({
           {producto.desc}
         </p>
         <div className="mt-4 flex items-center justify-between">
-          <span className="font-display text-xl font-bold text-[color:var(--pm-accent-dark)]">
-            {CLP(producto.precio)}
+          <span className="font-poppins text-sm font-medium text-[color:var(--pm-muted)]">
+            Cantidad
           </span>
           <div className="flex items-center gap-1 rounded-full bg-[color:var(--pm-surface-2)] p-1">
             <button

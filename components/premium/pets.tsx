@@ -18,7 +18,6 @@ import {
 import { useEffect } from "react";
 import { useStore } from "@/components/store-provider";
 import { PRODUCTOS } from "@/lib/data";
-import { EstudioLink } from "./estudio-link";
 import { PremiumFooter } from "./footer";
 import { Navbar } from "./navbar";
 import { PremiumCart } from "./cart";
@@ -93,7 +92,6 @@ export function PetsView() {
     <div className="premium" data-view="mascotas">
       <Navbar />
       <ThemeLab />
-      <EstudioLink />
       <PremiumCart />
       <PremiumWhatsappFloat />
 
@@ -128,10 +126,10 @@ export function PetsView() {
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href={waLink("¡Hola Antümalen! Quiero comprar.")}
+                  href={waLink("¡Hola Antümalen! Quiero hacer una consulta.")}
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-7 py-4 font-poppins font-semibold text-white shadow-lg shadow-[#25D366]/30 transition-transform hover:-translate-y-0.5"
                 >
-                  Comprar por WhatsApp
+                  Consultar por WhatsApp
                 </a>
                 <a
                   href="#productos"
@@ -200,9 +198,9 @@ export function PetsView() {
         <section id="productos" className="bg-[#f2efe9] px-5 py-20 sm:px-8">
           <div className="mx-auto w-full max-w-7xl">
             <SectionHead
-              eyebrow="Lo más pedido"
+              eyebrow="Lo más buscado"
               title="Productos destacados"
-              subtitle="Agrega al carrito y finaliza tu pedido por WhatsApp."
+              subtitle="Agrega los productos que te interesan y consulta disponibilidad por WhatsApp."
             />
             <Stagger className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {featured.map((p, i) => (
@@ -332,7 +330,7 @@ export function PetsView() {
               onClick={() => setCartOpen(true)}
               className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--pm-surface)] px-8 py-4 font-poppins font-semibold text-[color:var(--pm-fg)] transition-transform hover:-translate-y-0.5"
             >
-              Ver mi pedido
+              Ver mi consulta
             </button>
             <a
               href={waLink("¡Hola Antümalen! Necesito ayuda para elegir.")}

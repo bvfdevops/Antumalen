@@ -12,7 +12,6 @@ import {
 import { Toaster } from "sonner";
 import { StoreProvider } from "@/components/store-provider";
 import { ThemeProvider } from "@/components/theme-provider";
-import { GlobalChrome, GlobalHeader } from "@/components/site/global-chrome";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -69,9 +68,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <StoreProvider>
-            <GlobalHeader />
             {children}
-            <GlobalChrome />
             <Toaster position="bottom-center" richColors />
           </StoreProvider>
         </ThemeProvider>

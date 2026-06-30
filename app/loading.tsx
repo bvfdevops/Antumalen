@@ -1,4 +1,4 @@
-import { PetLoader } from "@/components/site/pet-loader";
+import { PetLoader } from "@/components/premium/pet-loader";
 
 export default function Loading() {
   return <PetLoader />;

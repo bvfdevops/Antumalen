@@ -3,7 +3,7 @@
 const WA_TEST = "56950306560";
 
 export function PremiumWhatsappFloat() {
-  const text = "¡Hola Antümalen! Quiero hacer un pedido / consulta.";
+  const text = "¡Hola Antümalen! Quiero hacer una consulta sobre un producto.";
   return (
     <a
       href={`https://wa.me/${WA_TEST}?text=${encodeURIComponent(text)}`}

@@ -1,15 +1,7 @@
-import {
-  Bird,
-  Bone,
-  Fish,
-  LayoutGrid,
-  type LucideIcon,
-  Rabbit,
-} from "lucide-react";
-
 /* ============================================================
    Datos de Antümalen — tienda de mascotas
-   El carrito no procesa pagos: arma un pedido por WhatsApp.
+   No se muestran precios: el cliente arma una lista y consulta
+   disponibilidad por WhatsApp.
    ============================================================ */
 
 export const WHATSAPP_NUMERO = "56987199748"; // +56 9 8719 9748
@@ -20,7 +12,8 @@ export type Producto = {
   id: string;
   nombre: string;
   categoria: string;
-  precio: number;
+  /** Ya no se muestra en la web; los precios se consultan por WhatsApp. */
+  precio?: number;
   rating?: number;
   desc: string;
   /** Imagen de referencia (Unsplash). Reemplazable por foto real del cliente. */
@@ -30,12 +23,6 @@ export type Producto = {
 /** Helper de imagen de referencia. */
 const img = (id: string) =>
   `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=600&q=80`;
-
-export type Categoria = {
-  id: string;
-  nombre: string;
-  icon: LucideIcon;
-};
 
 /* ---------------- Tienda ---------------- */
 
@@ -54,15 +41,6 @@ export const PRODUCTOS: Producto[] = [
   { id: "alimento-conejo-1kg", nombre: "Alimento para conejos 1 kg", categoria: "roedores", precio: 5490, rating: 4.6, desc: "Pellet balanceado para conejos y cuyes.", imagen: img("1452857297128-d9c29adba80b") },
   { id: "viruta-jaula-2kg", nombre: "Viruta para jaula 2 kg", categoria: "roedores", precio: 4290, rating: 4.5, desc: "Sustrato absorbente para roedores pequeños.", imagen: img("1591871937573-74dbba515c4c") },
   { id: "bebedero-roedor", nombre: "Bebedero de botella 250 ml", categoria: "roedores", precio: 3990, rating: 4.4, desc: "Bebedero antigoteo para jaulas.", imagen: img("1425082661705-1834bfd09dca") },
-];
-
-export const CATEGORIAS: Categoria[] = [
-  { id: "todos", nombre: "Todos", icon: LayoutGrid },
-  { id: "perros", nombre: "Perros", icon: Bone },
-  { id: "gatos", nombre: "Gatos", icon: Fish },
-  { id: "aves", nombre: "Aves", icon: Bird },
-  { id: "peces", nombre: "Peces", icon: Fish },
-  { id: "roedores", nombre: "Roedores", icon: Rabbit },
 ];
 
 export const ITEMS_BY_ID: Record<string, Producto> = Object.fromEntries(

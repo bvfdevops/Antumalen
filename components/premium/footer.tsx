@@ -71,29 +71,24 @@ export function PremiumFooter() {
           </h4>
           <ul className="space-y-2.5 text-sm text-white/60">
             <li>
-              <Link href={r("/premium")} className="hover:text-[color:var(--pm-accent)]">
+              <Link href={r("/")} className="hover:text-[color:var(--pm-accent)]">
                 Inicio
               </Link>
             </li>
             <li>
-              <Link href={r("/premium#productos")} className="hover:text-[color:var(--pm-accent)]">
+              <Link href={r("/#productos")} className="hover:text-[color:var(--pm-accent)]">
                 Productos
               </Link>
             </li>
             <li>
-              <Link href={r("/premium#nosotros")} className="hover:text-[color:var(--pm-accent)]">
+              <Link href={r("/#nosotros")} className="hover:text-[color:var(--pm-accent)]">
                 Nosotros
               </Link>
             </li>
             <li>
-              <Link href={r("/inicio")} className="hover:text-[color:var(--pm-accent)]">
-                Sitio actual
+              <Link href={r("/#contacto")} className="hover:text-[color:var(--pm-accent)]">
+                Contacto
               </Link>
-            </li>
-            <li>
-              <a href="/estudio.html" className="hover:text-[color:var(--pm-accent)]">
-                ← Volver al estudio
-              </a>
             </li>
           </ul>
         </div>

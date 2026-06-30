@@ -52,7 +52,7 @@ export function Navbar() {
       >
         <nav className="mx-auto flex h-[68px] w-full max-w-7xl items-center justify-between px-5 sm:px-8">
           {/* Logo */}
-          <Link href={r("/premium")} className="flex items-center gap-2.5">
+          <Link href={r("/")} className="flex items-center gap-2.5">
             <Image
               src="/logo/Antumalen_logo_nobg.png"
               alt="Antümalen"
@@ -84,7 +84,7 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setCartOpen(true)}
-              aria-label="Abrir carrito"
+              aria-label="Abrir mi consulta"
               className={cn(
                 "relative grid size-11 place-items-center rounded-xl bg-[color:var(--pm-surface)] shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md",
               )}

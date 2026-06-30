@@ -27,7 +27,6 @@ type StoreCtx = {
   clear: () => void;
   lines: CartLine[];
   count: number;
-  total: number;
 };
 
 const Ctx = createContext<StoreCtx | null>(null);
@@ -90,7 +89,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
         cart[id] = (cart[id] ?? 0) + 1;
       });
       toast.success(`${ITEMS_BY_ID[id]?.nombre ?? "Producto"} agregado`, {
-        description: "Revisa tu pedido cuando quieras.",
+        description: "Revisa tu consulta cuando quieras.",
       });
     },
     [mutate],
@@ -142,10 +141,6 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     () => Object.values(cart).reduce((t, n) => t + n, 0),
     [cart],
   );
-  const total = useMemo(
-    () => lines.reduce((t, i) => t + i.precio * i.cantidad, 0),
-    [lines],
-  );
 
   const value = useMemo<StoreCtx>(
     () => ({
@@ -160,9 +155,8 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       clear,
       lines,
       count,
-      total,
     }),
-    [mode, setMode, cartOpen, add, inc, dec, remove, clear, lines, count, total],
+    [mode, setMode, cartOpen, add, inc, dec, remove, clear, lines, count],
   );
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
