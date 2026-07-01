@@ -10,6 +10,7 @@ import {
   Poppins,
 } from "next/font/google";
 import { Toaster } from "sonner";
+import { SmoothScroll } from "@/components/smooth-scroll";
 import { StoreProvider } from "@/components/store-provider";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
@@ -68,7 +69,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <StoreProvider>
-            {children}
+            <SmoothScroll>{children}</SmoothScroll>
             <Toaster position="bottom-center" richColors />
           </StoreProvider>
         </ThemeProvider>
