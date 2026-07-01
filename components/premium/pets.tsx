@@ -198,7 +198,7 @@ export function PetsView() {
               title="Productos destacados"
               subtitle="Agrega los productos que te interesan y consulta disponibilidad por WhatsApp."
             />
-            <Stagger className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <Stagger className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
               {featured.map((p, i) => (
                 <StaggerItem key={p.id} className="h-full">
                   <ProductCard producto={p} badge={BADGES[i]} phLabel="Producto" icon={PawPrint} image={p.imagen} />
