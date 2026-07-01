@@ -1,12 +1,13 @@
 "use client";
 
+import { PawPrint } from "@phosphor-icons/react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
 
 /**
- * Cursor personalizado de marca: un punto preciso pegado al puntero y un
- * anillo que lo persigue con inercia. El anillo crece sobre elementos
- * interactivos y se encoge al hacer click.
+ * Cursor personalizado con temática de mascotas: una huella que sigue al
+ * puntero con una inercia leve, se agranda y se rellena sobre elementos
+ * interactivos y hace un "pisotón" al hacer click.
  *
  * Se activa solo en desktop con puntero fino (mouse/trackpad) y se apaga por
  * completo si el usuario pide reducir movimiento o está en touch — en esos
@@ -19,8 +20,9 @@ export function PetCursor() {
 
   const x = useMotionValue(-100);
   const y = useMotionValue(-100);
-  const ringX = useSpring(x, { damping: 28, stiffness: 350, mass: 0.5 });
-  const ringY = useSpring(y, { damping: 28, stiffness: 350, mass: 0.5 });
+  // Spring tenso: sigue de cerca al puntero (precisión) con un dejo de inercia.
+  const pawX = useSpring(x, { damping: 30, stiffness: 700, mass: 0.4 });
+  const pawY = useSpring(y, { damping: 30, stiffness: 700, mass: 0.4 });
 
   useEffect(() => {
     const fine = window.matchMedia("(pointer: fine)").matches;
@@ -53,28 +55,25 @@ export function PetCursor() {
   if (!enabled) return null;
 
   return (
-    <>
-      {/* Punto preciso (sin inercia) */}
+    <motion.div
+      aria-hidden
+      style={{ x: pawX, y: pawY }}
+      className="pointer-events-none fixed left-0 top-0 z-[100]"
+    >
       <motion.div
-        aria-hidden
-        style={{ x, y }}
-        className="pointer-events-none fixed left-0 top-0 z-[100]"
+        className="-ml-3 -mt-3"
+        animate={{
+          scale: (hover ? 1.55 : 1) * (down ? 0.78 : 1),
+          rotate: hover ? -8 : -18,
+        }}
+        transition={{ type: "spring", damping: 18, stiffness: 280 }}
       >
-        <div className="-ml-1 -mt-1 size-2 rounded-full bg-[color:var(--pm-accent-dark)]" />
-      </motion.div>
-
-      {/* Anillo que persigue con inercia */}
-      <motion.div
-        aria-hidden
-        style={{ x: ringX, y: ringY }}
-        className="pointer-events-none fixed left-0 top-0 z-[100]"
-      >
-        <motion.div
-          className="-ml-[17px] -mt-[17px] size-[34px] rounded-full border-2 border-[color:var(--pm-accent)]"
-          animate={{ scale: (hover ? 1.6 : 1) * (down ? 0.82 : 1), opacity: hover ? 0.9 : 0.5 }}
-          transition={{ type: "spring", damping: 20, stiffness: 300 }}
+        <PawPrint
+          className="size-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.25)]"
+          style={{ color: hover ? "var(--pm-accent-dark)" : "var(--pm-accent)" }}
+          weight={hover ? "fill" : "duotone"}
         />
       </motion.div>
-    </>
+    </motion.div>
   );
 }
