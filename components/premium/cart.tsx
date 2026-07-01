@@ -1,9 +1,10 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Minus, Plus, ShoppingBag, Trash, X } from "@phosphor-icons/react";
+import { Minus, Plus, Trash, X } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
 import { useStore } from "@/components/store-provider";
+import { LottiePet } from "./lottie-pet";
 
 // Número de prueba (mientras el cliente confirma). El definitivo vive en lib/data.ts.
 const WA_TEST = "56950306560";
@@ -104,8 +105,8 @@ export function PremiumCart() {
 
             <div className="flex-1 space-y-3 overflow-y-auto px-6">
               {lines.length === 0 ? (
-                <div className="flex flex-col items-center justify-center gap-3 py-16 text-center text-[color:var(--pm-muted)]">
-                  <ShoppingBag className="size-14 opacity-30" weight="duotone" />
+                <div className="flex flex-col items-center justify-center gap-2 py-12 text-center text-[color:var(--pm-muted)]">
+                  <LottiePet className="size-40" />
                   <p className="text-sm">
                     Tu consulta está vacía.
                     <br />
