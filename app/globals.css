@@ -308,6 +308,27 @@
   .pm-mesh { animation: none; }
 }
 
+/* ============================================================
+   V2 — landing alternativa (ruta /v2). Reutiliza los mismos
+   componentes premium que la principal, pero reordena las
+   secciones. Marquee de categorías para el strip horizontal.
+   ============================================================ */
+.v2-marquee {
+  display: flex;
+  width: max-content;
+  animation: v2-scroll 34s linear infinite;
+}
+.v2-marquee:hover {
+  animation-play-state: paused;
+}
+@keyframes v2-scroll {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v2-marquee { animation: none; }
+}
+
 .pm-wa-float {
   animation: pm-pulse 2.4s infinite;
 }
