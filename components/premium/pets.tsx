@@ -21,6 +21,7 @@ import { PRODUCTOS } from "@/lib/data";
 import { PremiumFooter } from "./footer";
 import { Navbar } from "./navbar";
 import { PremiumCart } from "./cart";
+import { PetCursor } from "./cursor";
 import {
   Counter,
   Placeholder,
@@ -90,6 +91,7 @@ export function PetsView() {
 
   return (
     <div className="premium" data-view="mascotas">
+      <PetCursor />
       <Navbar />
       <ThemeLab />
       <PremiumCart />
