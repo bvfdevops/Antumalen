@@ -101,14 +101,8 @@ export function PetsView() {
           id="inicio"
           className="relative overflow-hidden bg-[color:var(--pm-cream)] px-5 pb-16 pt-28 sm:px-8 sm:pt-32 lg:pb-24 lg:pt-36"
         >
-          <div
-            className="pointer-events-none absolute -right-32 -top-24 size-[520px] rounded-full opacity-50 blur-3xl"
-            style={{
-              background:
-                "radial-gradient(circle, rgba(123,174,127,0.4), transparent 65%)",
-            }}
-          />
-          <div className="mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-2">
+          <div className="pm-mesh" aria-hidden />
+          <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-2">
             <Reveal>
               <span className="font-poppins text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--pm-sage-dark)]">
                 San Clemente · Región del Maule

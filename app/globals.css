@@ -267,6 +267,33 @@
   100% { background-position: -130% 0; }
 }
 
+/* ============================================================
+   Mesh gradient animado — fondo ambiental del hero
+   Usa los tokens de acento (--pm-accent / --pm-accent-dark) para
+   que el ThemeLab lo re-tiña junto con el resto de la paleta.
+   ============================================================ */
+.pm-mesh {
+  position: absolute;
+  inset: -20%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(38% 48% at 22% 28%, color-mix(in oklab, var(--pm-accent) 45%, transparent), transparent 70%),
+    radial-gradient(34% 42% at 78% 18%, color-mix(in oklab, var(--pm-accent-dark) 32%, transparent), transparent 70%),
+    radial-gradient(46% 54% at 62% 82%, color-mix(in oklab, var(--pm-accent) 28%, transparent), transparent 72%);
+  filter: blur(48px);
+  opacity: 0.55;
+  will-change: transform;
+  animation: pm-mesh-drift 20s ease-in-out infinite alternate;
+}
+@keyframes pm-mesh-drift {
+  0% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); }
+  100% { transform: translate3d(0, -4%, 0) scale(1.12) rotate(4deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pm-mesh { animation: none; }
+}
+
 .pm-wa-float {
   animation: pm-pulse 2.4s infinite;
 }
