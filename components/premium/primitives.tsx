@@ -1,7 +1,7 @@
 "use client";
 
 import { animate, motion, useInView, type Variants } from "framer-motion";
-import { ImageIcon, type LucideIcon, Star } from "lucide-react";
+import { type Icon as PhIcon, Image as ImageIcon, Star } from "@phosphor-icons/react";
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -18,7 +18,7 @@ export function Placeholder({
   alt = "",
 }: {
   ratio?: string;
-  icon?: LucideIcon;
+  icon?: PhIcon;
   label?: string;
   className?: string;
   rounded?: string;
@@ -35,7 +35,7 @@ export function Placeholder({
         className="absolute inset-0 z-[1] flex flex-col items-center justify-center gap-2 px-4 text-center text-[color:var(--pm-ph-fg)]"
         aria-hidden
       >
-        <Icon className="size-8 opacity-70 sm:size-10" strokeWidth={1.5} />
+        <Icon className="size-8 opacity-70 sm:size-10" weight="duotone" />
         {label ? (
           <span className="font-poppins text-[0.7rem] font-semibold uppercase tracking-[0.12em] opacity-80">
             {label}
@@ -230,8 +230,7 @@ export function Stars({ value = 5 }: { value?: number }) {
         <Star
           key={i}
           className="size-4"
-          fill={i < value ? "currentColor" : "none"}
-          strokeWidth={i < value ? 0 : 1.5}
+          weight={i < value ? "fill" : "regular"}
         />
       ))}
     </div>

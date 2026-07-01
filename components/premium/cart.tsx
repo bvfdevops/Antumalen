@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Minus, Plus, ShoppingBag, Trash2, X } from "lucide-react";
+import { Minus, Plus, ShoppingBag, Trash, X } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
 import { useStore } from "@/components/store-provider";
 
@@ -105,7 +105,7 @@ export function PremiumCart() {
             <div className="flex-1 space-y-3 overflow-y-auto px-6">
               {lines.length === 0 ? (
                 <div className="flex flex-col items-center justify-center gap-3 py-16 text-center text-[color:var(--pm-muted)]">
-                  <ShoppingBag className="size-14 opacity-30" strokeWidth={1.2} />
+                  <ShoppingBag className="size-14 opacity-30" weight="duotone" />
                   <p className="text-sm">
                     Tu consulta está vacía.
                     <br />
@@ -151,7 +151,7 @@ export function PremiumCart() {
                           aria-label="Eliminar"
                           className="text-[color:var(--pm-muted)] transition-colors hover:text-red-500"
                         >
-                          <Trash2 className="size-4" />
+                          <Trash className="size-4" />
                         </button>
                       </div>
                     </div>

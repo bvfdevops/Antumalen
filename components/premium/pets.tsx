@@ -4,7 +4,7 @@ import {
   Bird,
   Cat,
   Dog,
-  Droplets,
+  Drop,
   Fish,
   Headset,
   Heart,
@@ -12,9 +12,9 @@ import {
   Rabbit,
   ShieldCheck,
   ShoppingBag,
-  Sparkles,
+  Sparkle,
   Truck,
-} from "lucide-react";
+} from "@phosphor-icons/react";
 import { useEffect } from "react";
 import { useStore } from "@/components/store-provider";
 import { PRODUCTOS } from "@/lib/data";
@@ -44,7 +44,7 @@ const CATEGORIAS = [
   { nombre: "Roedores", icon: Rabbit },
   { nombre: "Peces", icon: Fish },
   { nombre: "Reptiles", icon: PawPrint },
-  { nombre: "Higiene", icon: Droplets },
+  { nombre: "Higiene", icon: Drop },
   { nombre: "Accesorios", icon: ShoppingBag },
 ];
 
@@ -145,7 +145,7 @@ export function PetsView() {
                       key={b}
                       className="flex items-center gap-2 text-sm text-[color:var(--pm-muted)]"
                     >
-                      <Sparkles className="size-4 flex-none text-[color:var(--pm-sage-dark)]" />
+                      <Sparkle className="size-4 flex-none text-[color:var(--pm-sage-dark)]" weight="fill" />
                       {b}
                     </div>
                   ),
@@ -182,7 +182,7 @@ export function PetsView() {
                     className="group flex flex-col items-center gap-3"
                   >
                     <div className="grid size-20 place-items-center rounded-full bg-[color:var(--pm-surface)] shadow-[0_8px_24px_rgba(92,75,59,0.08)] transition-all duration-300 group-hover:-translate-y-1.5 group-hover:scale-105 group-hover:shadow-[0_16px_36px_rgba(92,75,59,0.16)] sm:size-24">
-                      <c.icon className="size-8 text-[color:var(--pm-sage-dark)]" strokeWidth={1.6} />
+                      <c.icon className="size-8 text-[color:var(--pm-sage-dark)]" weight="duotone" />
                     </div>
                     <span className="font-poppins text-sm font-medium text-[color:var(--pm-brown)]">
                       {c.nombre}
@@ -220,7 +220,7 @@ export function PetsView() {
                 <StaggerItem key={b.t}>
                   <div className="flex h-full items-start gap-4 rounded-3xl bg-[color:var(--pm-surface)] p-6 shadow-[0_4px_18px_rgba(92,75,59,0.06)] transition-transform hover:-translate-y-1">
                     <div className="grid size-12 flex-none place-items-center rounded-2xl bg-[color:var(--pm-sage)]/15 text-[color:var(--pm-sage-dark)]">
-                      <b.icon className="size-6" strokeWidth={1.7} />
+                      <b.icon className="size-6" weight="duotone" />
                     </div>
                     <div>
                       <h3 className="font-poppins text-base font-semibold text-[color:var(--pm-brown)]">

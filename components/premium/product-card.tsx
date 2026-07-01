@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, type LucideIcon, Minus, Plus } from "lucide-react";
+import { Check, type Icon, Minus, Plus } from "@phosphor-icons/react";
 import { useState } from "react";
 import { useStore } from "@/components/store-provider";
 import type { Producto } from "@/lib/data";
@@ -15,7 +15,7 @@ export function ProductCard({
   image,
 }: {
   producto: Producto;
-  icon?: LucideIcon;
+  icon?: Icon;
   badge?: string;
   phLabel?: string;
   image?: string;

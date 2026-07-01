@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Check, Palette, Type, X } from "lucide-react";
+import { Check, Palette, TextAa, X } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -204,7 +204,7 @@ export function ThemeLab() {
             </div>
 
             <div className="mb-2 mt-5 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-zinc-400">
-              <Type className="size-3.5" /> Tipografía
+              <TextAa className="size-3.5" /> Tipografía
             </div>
             <div className="flex flex-col gap-1.5">
               <FontRow

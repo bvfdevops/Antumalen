@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, ShoppingBag, X } from "lucide-react";
+import { List, ShoppingBag, X } from "@phosphor-icons/react";
 import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -110,7 +110,7 @@ export function Navbar() {
               aria-label="Abrir menú"
               className="grid size-11 place-items-center rounded-xl bg-[color:var(--pm-surface)] shadow-sm lg:hidden"
             >
-              <Menu className="size-5 text-[color:var(--pm-fg)]" />
+              <List className="size-5 text-[color:var(--pm-fg)]" />
             </button>
           </div>
         </nav>
