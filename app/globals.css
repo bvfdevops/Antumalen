@@ -329,6 +329,39 @@
   .v2-marquee { animation: none; }
 }
 
+/* ============================================================
+   V3 "Fable" — index. Marquee reutilizable (categorías y
+   testimonios) y flotado suave de las tarjetas del hero.
+   ============================================================ */
+.v3-marquee {
+  display: flex;
+  width: max-content;
+  animation: v2-scroll 30s linear infinite;
+}
+.v3-marquee--slow {
+  animation-duration: 55s;
+}
+.v3-marquee:hover {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .v3-marquee { animation: none; }
+}
+
+.v3-float {
+  animation: v3-bob 5.5s ease-in-out infinite;
+}
+.v3-float--late {
+  animation-delay: 2.4s;
+}
+@keyframes v3-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v3-float { animation: none; }
+}
+
 .pm-wa-float {
   animation: pm-pulse 2.4s infinite;
 }
