@@ -1,5 +1,5 @@
-import { PetsFableView } from "@/components/premium-v3/pets-fable";
+import { PetsAlmacenView } from "@/components/premium-v4/pets-almacen";
 
 export default function Page() {
-  return <PetsFableView />;
+  return <PetsAlmacenView />;
 }

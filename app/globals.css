@@ -330,6 +330,70 @@
 }
 
 /* ============================================================
+   V4 "Almacén" — index. Identidad propia: papel cálido con
+   trama de puntos, azul petróleo + dorado de marca, bordes
+   duros y sombras desplazadas. Remapea los tokens --pm-* para
+   que los componentes compartidos (carrito, cursor de huella,
+   placeholders) hereden la paleta sin tocarlos.
+   ============================================================ */
+.premium.v4 {
+  --v4-paper: #f6f1e4;
+  --v4-surface: #fffdf6;
+  --v4-ink: #123f4d;
+  --v4-petrol: #0e5a6b;
+  --v4-gold: #f0b429;
+  --v4-gold-deep: #c98d0a;
+  --v4-line: rgba(18, 63, 77, 0.22);
+
+  --pm-bg: var(--v4-paper);
+  --pm-cream: var(--v4-paper);
+  --pm-surface: var(--v4-surface);
+  --pm-surface-2: rgba(18, 63, 77, 0.07);
+  --pm-fg: var(--v4-ink);
+  --pm-ink: var(--v4-ink);
+  --pm-brown: var(--v4-ink);
+  --pm-muted: #587078;
+  --pm-border: var(--v4-line);
+  --pm-accent: var(--v4-gold);
+  --pm-accent-dark: var(--v4-petrol);
+  --pm-sage: var(--v4-gold);
+  --pm-sage-dark: var(--v4-petrol);
+  --pm-on-accent: var(--v4-ink);
+  --pm-ph-a: #eae3d0;
+  --pm-ph-b: #dcd2b8;
+  --pm-ph-fg: #a89c7f;
+
+  --pm-font-display: var(--font-fraunces), Georgia, serif;
+  --pm-font-ui: var(--font-montserrat), ui-sans-serif, sans-serif;
+  --pm-font-body: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+}
+.v4 .font-hand {
+  font-family: var(--font-caveat), cursive;
+}
+
+/* Trama de puntos de fondo (clara y sobre dorado) */
+.v4-dots {
+  background-image: radial-gradient(var(--v4-line) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+.v4-dots-dark {
+  background-image: radial-gradient(rgba(18, 63, 77, 0.22) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+/* Sello circular giratorio del hero */
+.v4-spin {
+  animation: v4-spin 18s linear infinite;
+  transform-origin: 50% 50%;
+}
+@keyframes v4-spin {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v4-spin { animation: none; }
+}
+
+/* ============================================================
    V3 "Fable" — index. Marquee reutilizable (categorías y
    testimonios) y flotado suave de las tarjetas del hero.
    ============================================================ */
