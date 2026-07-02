@@ -17,7 +17,7 @@ import {
 } from "@phosphor-icons/react";
 import { useEffect } from "react";
 import { useStore } from "@/components/store-provider";
-import { PRODUCTOS } from "@/lib/data";
+import { buildWhatsappLink, PRODUCTOS } from "@/lib/data";
 import { PremiumFooter } from "./footer";
 import { Navbar } from "./navbar";
 import { PremiumCart } from "./cart";
@@ -35,8 +35,7 @@ import { ProductCard } from "./product-card";
 import { ThemeLab } from "./theme-lab";
 import { PremiumWhatsappFloat } from "./whatsapp-float";
 
-const WA = "56950306560";
-const waLink = (t: string) => `https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
+const waLink = buildWhatsappLink;
 
 const CATEGORIAS = [
   { nombre: "Perros", icon: Dog },

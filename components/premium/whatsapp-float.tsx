@@ -1,12 +1,12 @@
 "use client";
 
-const WA_TEST = "56950306560";
+import { buildWhatsappLink } from "@/lib/data";
 
 export function PremiumWhatsappFloat() {
   const text = "¡Hola Antümalen! Quiero hacer una consulta sobre un producto.";
   return (
     <a
-      href={`https://wa.me/${WA_TEST}?text=${encodeURIComponent(text)}`}
+      href={buildWhatsappLink(text)}
       aria-label="Escríbenos por WhatsApp"
       className="pm-wa-float fixed bottom-6 right-6 z-[60] grid size-14 place-items-center rounded-full bg-[#25D366] text-white shadow-xl shadow-[#25D366]/40 transition-transform hover:scale-110"
     >

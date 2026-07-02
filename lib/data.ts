@@ -4,7 +4,7 @@
    disponibilidad por WhatsApp.
    ============================================================ */
 
-export const WHATSAPP_NUMERO = "56987199748"; // +56 9 8719 9748
+export const WHATSAPP_NUMERO = "56950306560"; // +56 9 5030 6560
 
 export type Mode = "tienda";
 

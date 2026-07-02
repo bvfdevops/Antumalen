@@ -39,7 +39,7 @@ import {
 } from "@phosphor-icons/react";
 import { useEffect, useMemo, useState } from "react";
 import { useStore } from "@/components/store-provider";
-import { PRODUCTOS } from "@/lib/data";
+import { buildWhatsappLink, PRODUCTOS } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/premium/navbar";
 import { PremiumCart } from "@/components/premium/cart";
@@ -58,8 +58,7 @@ import {
   Stars,
 } from "@/components/premium/primitives";
 
-const WA = "56950306560";
-const waLink = (t: string) => `https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
+const waLink = buildWhatsappLink;
 
 const CATEGORIAS = [
   { nombre: "Perros", icon: Dog },

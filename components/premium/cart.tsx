@@ -4,10 +4,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Minus, Plus, Trash, X } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
 import { useStore } from "@/components/store-provider";
+import { buildWhatsappLink } from "@/lib/data";
 import { LottiePet } from "./lottie-pet";
-
-// Número de prueba (mientras el cliente confirma). El definitivo vive en lib/data.ts.
-const WA_TEST = "56950306560";
 
 function useIsMobile() {
   const [mobile, setMobile] = useState(false);
@@ -44,7 +42,7 @@ export function PremiumCart() {
       (nombre ? `Nombre: ${nombre}\n` : "") +
       (obs ? `Observaciones: ${obs}\n` : "") +
       `\n¿Los tienen disponibles? Muchas gracias.`;
-    window.location.href = `https://wa.me/${WA_TEST}?text=${encodeURIComponent(msg)}`;
+    window.location.href = buildWhatsappLink(msg);
   }
 
   const panelMotion = isMobile
